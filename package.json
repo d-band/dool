@@ -1,5 +1,5 @@
 {
-  "name": "dool",
+  "name": "dool-build",
   "version": "0.0.1",
   "description": "d-band tool & dev tool",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/d-band/dool.git"
+    "url": "git+https://github.com/d-band/dool-build.git"
   },
   "keywords": [
     "d-band",
@@ -18,7 +18,7 @@
   "author": "d-band",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/d-band/dool/issues"
+    "url": "https://github.com/d-band/dool-build/issues"
   },
-  "homepage": "https://github.com/d-band/dool#readme"
+  "homepage": "https://github.com/d-band/dool-build#readme"
 }
