@@ -1,0 +1,4 @@
+#!/usr/bin/env node --harmony
+'use strict';
+
+require('dool-build/cli');

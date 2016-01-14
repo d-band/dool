@@ -1,10 +1,17 @@
 {
   "name": "dool",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "d-band tool & dev tool",
-  "main": "index.js",
+  "bin": {
+    "dool": "bin/dool"
+  },
   "scripts": {
     "test": "make test"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "cross-spawn": "^2.1.4",
+    "dool-build": "~0.0.4"
   },
   "repository": {
     "type": "git",
@@ -12,13 +19,17 @@
   },
   "keywords": [
     "d-band",
+    "dev",
     "tool",
-    "dev-tool"
+    "dool"
   ],
   "author": "d-band",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/d-band/dool/issues"
   },
-  "homepage": "https://github.com/d-band/dool#readme"
+  "homepage": "https://github.com/d-band/dool#readme",
+  "engines": {
+    "node": ">= 4"
+  }
 }
