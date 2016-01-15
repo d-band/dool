@@ -1,4 +1,4 @@
 #!/usr/bin/env node --harmony
 'use strict';
 
-console.log('dool is cool!');
+require('dool-server/cli');
