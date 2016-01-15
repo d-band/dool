@@ -45,6 +45,8 @@ $ dool -h
     build          build entry files specified in package.json
     server         debug with server
     test           unit test
+
+    
 $ dool build -h
 
   Usage: dool-build [options]
