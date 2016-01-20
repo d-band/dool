@@ -63,6 +63,8 @@ $ dool build -h
     --no-compress             build without compress
 ```
 
+[![asciicast](https://asciinema.org/a/34125.png)](https://asciinema.org/a/34125)
+
 ## Report a issue
 
 * [All issues](https://github.com/d-band/dool/issues)
