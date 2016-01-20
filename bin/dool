@@ -19,7 +19,7 @@ var args = process.argv.slice(3);
 if (subcmd) {
   var bin = executable(subcmd);
   if (bin) {
-    spawn('node --harmony ' + bin, args, {
+    spawn(bin, args, {
       stdio: 'inherit'
     });
   } else {
