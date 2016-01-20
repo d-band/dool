@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony
+#!/usr/bin/env node
 
 'use strict';
 
@@ -19,7 +19,7 @@ var args = process.argv.slice(3);
 if (subcmd) {
   var bin = executable(subcmd);
   if (bin) {
-    spawn(bin, args, {
+    spawn('node --harmony ' + bin, args, {
       stdio: 'inherit'
     });
   } else {
