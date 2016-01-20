@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
@@ -12,7 +12,7 @@
     "commander": "^2.9.0",
     "cross-spawn": "^2.1.4",
     "dool-build": "~0.0.15",
-    "dool-server": "~0.0.9"
+    "dool-server": "~0.0.10"
   },
   "repository": {
     "type": "git",
