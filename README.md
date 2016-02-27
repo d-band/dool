@@ -15,6 +15,7 @@ _  /_/ / / /_/ // /_/ /_  /
 
 [![NPM version](https://img.shields.io/npm/v/dool.svg)](https://www.npmjs.com/package/dool)
 [![NPM downloads](https://img.shields.io/npm/dm/dool.svg)](https://www.npmjs.com/package/dool)
+[![Dependency Status](https://david-dm.org/d-band/dool.svg)](https://david-dm.org/d-band/dool)
 
 ---
 
