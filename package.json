@@ -13,7 +13,7 @@
     "cross-spawn": "~3.0.1",
     "dool-build": "~1.2.3",
     "dool-init": "~0.0.5",
-    "dool-server": "~1.2.0"
+    "dool-server": "~1.2.1"
   },
   "repository": {
     "type": "git",
