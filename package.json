@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "commander": "~2.9.0",
-    "cross-spawn": "~4.0.0",
+    "cross-spawn": "~4.0.2",
     "dool-build": "~1.2.4",
     "dool-init": "~0.0.7",
     "dool-server": "~1.2.2"
