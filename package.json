@@ -12,7 +12,7 @@
     "commander": "~2.9.0",
     "cross-spawn": "~4.0.2",
     "dool-build": "~1.2.5",
-    "dool-init": "~0.0.7",
+    "dool-init": "~0.1.0",
     "dool-server": "~1.2.2"
   },
   "repository": {
