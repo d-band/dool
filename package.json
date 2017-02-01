@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
