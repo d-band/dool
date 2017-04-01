@@ -11,7 +11,7 @@
   "dependencies": {
     "commander": "^2.9.0",
     "cross-spawn": "^5.1.0",
-    "dool-build": "^2.1.0",
+    "dool-build": "^2.1.1",
     "dool-init": "^2.0.1",
     "dool-server": "^2.0.0"
   },
