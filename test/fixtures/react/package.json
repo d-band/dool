@@ -1,0 +1,9 @@
+{
+  "files": [
+    "./index.js"
+  ],
+  "externals": {
+    "react": "React",
+    "react-dom": "ReactDOM"
+  }
+}

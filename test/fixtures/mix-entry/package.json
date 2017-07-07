@@ -1,0 +1,8 @@
+{
+  "entry": {
+    "index": "./index.js"
+  },
+  "files": [
+    "./f-*"
+  ]
+}

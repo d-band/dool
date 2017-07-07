@@ -1,0 +1,90 @@
+/* custom properties */
+
+/* custom media queries */
+
+/* some var() & calc() */
+body {
+  color: rgba(18, 52, 86, 0.47059);
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding: calc(0.5rem + 1px);
+}
+
+/* custom media query usage */
+@media (max-width: 50rem) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+/* custom selectors */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0
+}
+
+/* colors stuff */
+a {
+  color: rgb(89, 185, 204);
+  -webkit-transition: color 1s;
+  transition: color 1s; /* autoprefixed ! */
+}
+a:hover {
+  color: rgba(255, 255, 255, 0.5)
+}
+a:active {
+  color: #639
+}
+a:focus {
+  background-color: rgba(255, 153, 0, .33);
+  outline: 3px solid hsl(360, 60%, 50%);
+}
+a:link,a:visited {
+  color: rgb(89, 142, 153)
+}
+
+/* font stuff */
+h2 {
+  -webkit-font-feature-settings: "c2sc";
+          font-feature-settings: "c2sc";
+  font-variant-caps: small-caps;
+}
+table {
+  -webkit-font-feature-settings: "lnum";
+          font-feature-settings: "lnum";
+  font-variant-numeric: lining-nums;
+}
+
+/* filters */
+.blur {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="4" /></filter></svg>#filter');
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+.sepia {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.5144 0.6152000000000001 0.1512 0 0 0.2792 0.7488 0.13440000000000002 0 0 0.21760000000000002 0.4272 0.30479999999999996 0 0 0 0 0 1 0" /></filter></svg>#filter');
+  -webkit-filter: sepia(.8);
+          filter: sepia(.8);
+}
+
+/* overflow-wrap fallback */
+body {
+  word-wrap: break-word;
+}
+
+/* attribute case insensitive */
+[frame=hsides],[frame=Hsides],[frame=hSides],[frame=HSides],[frame=hsIdes],[frame=HsIdes],[frame=hSIdes],[frame=HSIdes],[frame=hsiDes],[frame=HsiDes],[frame=hSiDes],[frame=HSiDes],[frame=hsIDes],[frame=HsIDes],[frame=hSIDes],[frame=HSIDes],[frame=hsidEs],[frame=HsidEs],[frame=hSidEs],[frame=HSidEs],[frame=hsIdEs],[frame=HsIdEs],[frame=hSIdEs],[frame=HSIdEs],[frame=hsiDEs],[frame=HsiDEs],[frame=hSiDEs],[frame=HSiDEs],[frame=hsIDEs],[frame=HsIDEs],[frame=hSIDEs],[frame=HSIDEs],[frame=hsideS],[frame=HsideS],[frame=hSideS],[frame=HSideS],[frame=hsIdeS],[frame=HsIdeS],[frame=hSIdeS],[frame=HSIdeS],[frame=hsiDeS],[frame=HsiDeS],[frame=hSiDeS],[frame=HSiDeS],[frame=hsIDeS],[frame=HsIDeS],[frame=hSIDeS],[frame=HSIDeS],[frame=hsidES],[frame=HsidES],[frame=hSidES],[frame=HSidES],[frame=hsIdES],[frame=HsIdES],[frame=hSIdES],[frame=HSIdES],[frame=hsiDES],[frame=HsiDES],[frame=hSiDES],[frame=HSiDES],[frame=hsIDES],[frame=HsIDES],[frame=hSIDES],[frame=HSIDES] {
+  border-style: solid none;
+}
+
+/* system-ui font-family */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+}

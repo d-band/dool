@@ -2,44 +2,97 @@
 
 'use strict';
 
-var spawn = require('cross-spawn');
-var join = require('path').join;
-var exists = require('fs').existsSync;
-var program = require('commander');
+const resolve = require('path').resolve;
+const pkg = require('../package');
 
-program
-  .version(require('../package').version, '-v, --version')
-  .usage('<command> [options]')
-  .on('--help', printHelp)
-  .parse(process.argv);
-
-var subcmd = program.args[0];
-var args = process.argv.slice(3);
-
-if (subcmd) {
-  var bin = executable(subcmd);
-  if (bin) {
-    spawn(bin, args, {
-      stdio: 'inherit'
+const initOptions = yargs => {
+  yargs
+    .usage('Usage: dool init [options] <path>')
+    .option('prefix', {
+      describe: 'Repo prefix for search',
+      default: 'dool-template-'
     });
+};
+const getOptions = isBuild => yargs => {
+  yargs
+    .usage(`Usage: dool ${isBuild ? 'build' : 'server'} [options]`)
+    .option('compress', {
+      describe: 'Build with compress',
+      default: isBuild ? true : false
+    })
+    .option('extract', {
+      describe: 'Build with extract CSS',
+      default: true
+    })
+    .option('config', {
+      describe: 'Custom config path',
+      default: 'webpack.config.js'
+    });
+  if (isBuild) {
+    yargs
+      .option('hash', {
+        describe: 'Build with hash and output map.json',
+        default: false
+      })
+      .option('watch', {
+        alias: 'w',
+        describe: 'Watch and rebuild',
+        default: false
+      })
+      .option('cluster', {
+        describe: 'Run build with cluster',
+        default: false
+      })
+      .option('output-path', {
+        alias: 'o',
+        describe: 'Output path',
+        default: './dist'
+      });
   } else {
-    printHelp();
+    yargs
+      .option('port', {
+        alias: 'p',
+        describe: 'Server port',
+        default: 8000
+      })
+      .option('https', {
+        describe: 'Serve with HTTPS',
+        default: false
+      });
   }
-}
-
-function printHelp() {
-  console.log('  Commands:');
-  console.log();
-  console.log('    init           initialize');
-  console.log('    build          build entry files specified in package.json');
-  console.log('    server         debug with server');
-  console.log('    test           unit test');
-  console.log();
-}
-
-function executable(subcmd) {
-  var file = join(__dirname, 'dool-' + subcmd);
-  if (exists(file)) {
-    return file;
-  }
-}
+  
+  yargs
+    .option('public-path', {
+      type: 'string',
+      alias: 'P',
+      describe: 'Public path'
+    })
+    .option('devtool', {
+      type: 'string',
+      describe: 'SourceMap generate method',
+      default: isBuild ? undefined : 'cheap-module-source-map'
+    })
+    .option('verbose', {
+      describe: 'Show more details',
+      default: false
+    });
+};
+const initCmd = argv => {
+  argv.cwd = resolve(argv._.length > 1 ? argv._[1] : '.');
+  require('dool-init/lib/')(argv);
+};
+const buildCmd = argv => {
+  argv.cwd = process.cwd();
+  require('../lib/build')(argv);
+};
+const serverCmd = argv => {
+  argv.cwd = process.cwd();
+  require('../lib/server')(argv);
+};
+require('yargs')
+  .command('init', 'Initialize project', initOptions, initCmd)
+  .command('build', 'Build project', getOptions(true), buildCmd)
+  .command('server', 'Serve project', getOptions(false), serverCmd)
+  .version(pkg.version).alias('version', 'v')
+  .help(true).alias('help', 'h')
+  .argv;

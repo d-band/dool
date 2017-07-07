@@ -1,0 +1,29 @@
+@blue: blue;
+
+/* index.less */
+h1 {
+  color: @blue;
+}
+a {
+  transition: transform 1s;
+  transform: rotateX(45deg);
+}
+b {
+  transform: translateX(45deg);
+}
+em {
+  transform: rotateZ(45deg);
+}
+@keyframes anim {
+  from {
+    transform: rotate(90deg);
+  }
+}
+.index {
+  color: red;
+  display: flex;
+
+  .foo {
+    position: absolute 0;
+  }
+}

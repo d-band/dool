@@ -1,0 +1,9 @@
+{
+  entry: {
+    'index.css': './index.css'
+  },
+  autoprefixer: false,
+  postcssPlugins: {
+    'postcss-cssnext': {}
+  }
+}

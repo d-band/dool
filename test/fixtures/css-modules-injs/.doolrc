@@ -1,0 +1,6 @@
+{
+  files: 'src/index.js',
+  filesBase: 'src',
+  CSSModules: ['src'],
+  extract: false
+}
