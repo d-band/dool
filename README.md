@@ -73,7 +73,7 @@ $ dool build -h
 - `.doolrc.js` support export Object or Function
 
 ```javascript
-// .doolrc file format
+// .doolrc
 {
   entry: Object,
   files: String | Array,
