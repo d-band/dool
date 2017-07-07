@@ -35,7 +35,10 @@ export default (args) => {
     extraConfig(config);
   }
   const compiler = webpack(config);
-  const server = new WebpackDevServer(compiler, devServer);
+  const server = new WebpackDevServer(compiler, {
+    ...devServer,
+    ...options.devServer
+  });
   server.listen(port, '0.0.0.0', function () {});
 
   const url = (https ? 'https://' : 'http://') + address() + ':' + port;
