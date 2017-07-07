@@ -66,6 +66,35 @@ $ dool build -h
 
 [![asciicast](https://asciinema.org/a/34125.png)](https://asciinema.org/a/34125)
 
+## Configuration
+
+- configuration file: `.doolrc` or `.doolrc.js`
+- `.doolrc` is JSON file
+- `.doolrc.js` support export Object or Function
+
+```
+// .doolrc file format
+{
+  entry: Object,
+  files: String | Array,
+  filesBase: String,
+  publicPath: String,
+  outputPath: String,
+  babelPlugins: Array,
+  postcssPlugins: Object,
+  autoprefixer: false | Object,
+  externals: Object,
+  extract: Boolean,
+  CSSModules: true | Array,
+  CSSSourceMap: Boolean,
+  commons: true | Object | Array,
+  compress: Boolean,
+  hash: Boolean,
+  devtool: String,
+  devServer: Object
+}
+```
+
 ## Report a issue
 
 * [All issues](https://github.com/d-band/dool/issues)
