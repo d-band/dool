@@ -79,12 +79,12 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__index_css___default.a);
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(true);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".global-class-name {\n  color: green;\n}\n.normal_1NnZ5 {\n  color: red;\n}", "", {"version":3,"sources":["/Users/helloyou/Documents/js_pro/dool/index.css"],"names":[],"mappings":"AAAA;EACE,aAAa;CACd;AACD;EACE,WAAW;CACZ","file":"index.css","sourcesContent":[":global(.global-class-name) {\n  color: green;\n}\n.normal {\n  color: red;\n}"],"sourceRoot":""}]);
+exports.push([module.i, ".global-class-name {\n  color: green;\n}\n.normal_1NnZ5 {\n  color: red;\n}", ""]);
 
 // exports
 exports.locals = {
