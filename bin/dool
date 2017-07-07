@@ -90,6 +90,7 @@ const serverCmd = argv => {
   require('../lib/server')(argv);
 };
 require('yargs')
+  .usage('Usage: dool <command> [options]')
   .command('init', 'Initialize project', initOptions, initCmd)
   .command('build', 'Build project', getOptions(true), buildCmd)
   .command('server', 'Serve project', getOptions(false), serverCmd)

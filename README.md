@@ -35,33 +35,33 @@ $ dool -h
 
   Usage: dool <command> [options]
 
-  Options:
-
-    -h, --help     output usage information
-    -v, --version  output the version number
-
   Commands:
+    init    Initialize project
+    build   Build project
+    server  Serve project
 
-    init           initialize
-    build          build entry files specified in package.json
-    server         debug with server
-    test           unit test
+  Options:
+    --version, -v  Show version number
+    --help, -h     Show help
 
     
 $ dool build -h
 
-  Usage: dool-build [options]
+  Usage: dool build [options]
 
   Options:
-
-    -h, --help                output usage information
-    -v, --version             output the version number
-    -o, --output-path <path>  output path
-    -w, --watch [delay]       watch file changes and rebuild
-    --hash                    build with hash and output map.json
-    --devtool <devtool>       sourcemap generate method, default is null
-    --config <path>           custom config path, default is webpack.config.js
-    --no-compress             build without compress
+    --version, -v      Show version number                               [boolean]
+    --help, -h         Show help                                         [boolean]
+    --compress         Build with compress                         [default: true]
+    --extract          Build with extract CSS                      [default: true]
+    --config           Custom config path           [default: "webpack.config.js"]
+    --hash             Build with hash and output map.json        [default: false]
+    --watch, -w        Watch and rebuild                          [default: false]
+    --cluster          Run build with cluster                     [default: false]
+    --output-path, -o  Output path                             [default: "./dist"]
+    --public-path, -P  Public path                                        [string]
+    --devtool          SourceMap generate method                          [string]
+    --verbose          Show more details                          [default: false]
 ```
 
 [![asciicast](https://asciinema.org/a/34125.png)](https://asciinema.org/a/34125)
