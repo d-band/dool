@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
@@ -38,7 +38,7 @@
     "css-loader": "^0.28.3",
     "dool-init": "^2.0.1",
     "es6-promise": "^4.0.5",
-    "extract-text-webpack-plugin": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.0",
     "glob": "^7.1.2",
     "ip": "^1.1.5",
@@ -50,7 +50,7 @@
     "map-json-webpack-plugin": "^1.1.0",
     "postcss-loader": "^2.0.0",
     "url-loader": "^0.5.7",
-    "webpack": "^3.0.0",
+    "webpack": "^3.1.0",
     "webpack-dev-server": "^2.5.1",
     "worker-farm": "^1.4.1",
     "yargs": "^8.0.2"
