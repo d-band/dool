@@ -85,7 +85,7 @@ var HelloMessage = function HelloMessage(props) {
   );
 };
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"](__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HelloMessage, { name: 'John' }), document.getElementById('root'));
+Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HelloMessage, { name: 'John' }), document.getElementById('root'));
 
 /***/ }),
 /* 1 */
