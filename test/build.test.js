@@ -31,6 +31,7 @@ function assert (actualDir, _expect) {
 function testBuild (args, fixture, done) {
   const cwd = join(__dirname, 'fixtures', fixture);
   const outputPath = join(cwd, 'dist');
+  process.chdir(cwd);
   const defaultConfig = {
     cwd: cwd,
     verbose: false,
@@ -104,7 +105,6 @@ describe('src/build', function () {
   it('should support sourcemap', done => {
     testBuild({
       compress: true,
-      CSSSourceMap: false,
       devtool: 'source-map'
     }, 'sourcemap', done);
   });
