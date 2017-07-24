@@ -12,6 +12,9 @@ export default (args) => {
   const devServer = {
     disableHostCheck: true,
     https: https,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
     stats: {
       colors: true,
       children: verbose,
