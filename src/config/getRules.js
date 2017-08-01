@@ -50,8 +50,8 @@ function getCSSLoaders ({
     }
   };
   return {
-    css: [css, postcss],
-    less: [css, postcss, less]
+    css: ['style-loader', css, postcss],
+    less: ['style-loader', css, postcss, less]
   };
 }
 
@@ -71,13 +71,15 @@ function getCSSRules (options) {
     test: /\.css$/,
     exclude: paths,
     use: extract ? ExtractTextPlugin.extract({
-      use: base.css
+      fallback: 'style-loader',
+      use: base.css.slice(1)
     }) : base.css
   }, {
     test: /\.less$/,
     exclude: paths,
     use: extract ? ExtractTextPlugin.extract({
-      use: base.less
+      fallback: 'style-loader',
+      use: base.less.slice(1)
     }) : base.less
   }];
   if (paths) {
@@ -86,13 +88,15 @@ function getCSSRules (options) {
       test: /\.css$/,
       include: paths,
       use: extract ? ExtractTextPlugin.extract({
-        use: modules.css
+        fallback: 'style-loader',
+        use: modules.css.slice(1)
       }) : modules.css
     }, {
       test: /\.less$/,
       include: paths,
       use: extract ? ExtractTextPlugin.extract({
-        use: modules.less
+        fallback: 'style-loader',
+        use: modules.less.slice(1)
       }) : modules.less
     }];
     rules = [...rules, ...moduleRules];
