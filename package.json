@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
@@ -34,10 +34,8 @@
     "babel-preset-env": "^1.3.0",
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
-    "commander": "^2.9.0",
     "css-loader": "^0.28.3",
     "dool-init": "^2.0.1",
-    "es6-promise": "^4.0.5",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.0",
     "glob": "^7.1.2",
