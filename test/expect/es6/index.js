@@ -74,7 +74,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 // es2017
 var foo = function () {
-  var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
