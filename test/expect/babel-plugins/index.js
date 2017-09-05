@@ -94,19 +94,30 @@ $exports.store = store;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var core = module.exports = { version: '2.5.0' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+var isObject = __webpack_require__(5);
+module.exports = function (it) {
+  if (!isObject(it)) throw TypeError(it + ' is not an object!');
+  return it;
+};
 
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+var core = module.exports = { version: '2.5.1' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(10);
+var dP = __webpack_require__(11);
 var createDesc = __webpack_require__(25);
-module.exports = __webpack_require__(5) ? function (object, key, value) {
+module.exports = __webpack_require__(6) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
   object[key] = value;
@@ -115,18 +126,16 @@ module.exports = __webpack_require__(5) ? function (object, key, value) {
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 5 */
+/***/ (function(module, exports) {
 
-var isObject = __webpack_require__(11);
 module.exports = function (it) {
-  if (!isObject(it)) throw TypeError(it + ' is not an object!');
-  return it;
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
@@ -136,20 +145,20 @@ module.exports = !__webpack_require__(24)(function () {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 module.exports = {};
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(0);
-var core = __webpack_require__(2);
-var ctx = __webpack_require__(8);
-var hide = __webpack_require__(3);
+var core = __webpack_require__(3);
+var ctx = __webpack_require__(9);
+var hide = __webpack_require__(4);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -210,11 +219,11 @@ module.exports = $export;
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(9);
+var aFunction = __webpack_require__(10);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -236,7 +245,7 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -246,15 +255,15 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(4);
+var anObject = __webpack_require__(2);
 var IE8_DOM_DEFINE = __webpack_require__(41);
 var toPrimitive = __webpack_require__(42);
 var dP = Object.defineProperty;
 
-exports.f = __webpack_require__(5) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+exports.f = __webpack_require__(6) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
   anObject(O);
   P = toPrimitive(P, true);
   anObject(Attributes);
@@ -264,15 +273,6 @@ exports.f = __webpack_require__(5) ? Object.defineProperty : function defineProp
   if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
   if ('value' in Attributes) O[P] = Attributes.value;
   return O;
-};
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-module.exports = function (it) {
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
 
 
@@ -324,7 +324,7 @@ module.exports = function (it) {
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(11);
+var isObject = __webpack_require__(5);
 var document = __webpack_require__(0).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
@@ -360,7 +360,7 @@ module.exports = function (key) {
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var def = __webpack_require__(10).f;
+var def = __webpack_require__(11).f;
 var has = __webpack_require__(12);
 var TAG = __webpack_require__(1)('toStringTag');
 
@@ -376,7 +376,7 @@ module.exports = function (it, tag, stat) {
 "use strict";
 
 // 25.4.1.5 NewPromiseCapability(C)
-var aFunction = __webpack_require__(9);
+var aFunction = __webpack_require__(10);
 
 function PromiseCapability(C) {
   var resolve, reject;
@@ -407,11 +407,11 @@ module.exports = { "default": __webpack_require__(37), __esModule: true };
 "use strict";
 
 var LIBRARY = __webpack_require__(23);
-var $export = __webpack_require__(7);
+var $export = __webpack_require__(8);
 var redefine = __webpack_require__(43);
-var hide = __webpack_require__(3);
+var hide = __webpack_require__(4);
 var has = __webpack_require__(12);
-var Iterators = __webpack_require__(6);
+var Iterators = __webpack_require__(7);
 var $iterCreate = __webpack_require__(44);
 var setToStringTag = __webpack_require__(19);
 var getPrototypeOf = __webpack_require__(52);
@@ -598,8 +598,8 @@ module.exports = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
-var anObject = __webpack_require__(4);
-var aFunction = __webpack_require__(9);
+var anObject = __webpack_require__(2);
+var aFunction = __webpack_require__(10);
 var SPECIES = __webpack_require__(1)('species');
 module.exports = function (O, D) {
   var C = anObject(O).constructor;
@@ -612,7 +612,7 @@ module.exports = function (O, D) {
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx = __webpack_require__(8);
+var ctx = __webpack_require__(9);
 var invoke = __webpack_require__(64);
 var html = __webpack_require__(30);
 var cel = __webpack_require__(16);
@@ -715,9 +715,13 @@ module.exports = function (exec) {
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var anObject = __webpack_require__(2);
+var isObject = __webpack_require__(5);
 var newPromiseCapability = __webpack_require__(20);
 
 module.exports = function (C, x) {
+  anObject(C);
+  if (isObject(x) && x.constructor === C) return x;
   var promiseCapability = newPromiseCapability.f(C);
   var resolve = promiseCapability.resolve;
   resolve(x);
@@ -795,7 +799,7 @@ __webpack_require__(54);
 __webpack_require__(58);
 __webpack_require__(69);
 __webpack_require__(70);
-module.exports = __webpack_require__(2).Promise;
+module.exports = __webpack_require__(3).Promise;
 
 
 /***/ }),
@@ -855,7 +859,7 @@ module.exports = function (TO_STRING) {
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(5) && !__webpack_require__(24)(function () {
+module.exports = !__webpack_require__(6) && !__webpack_require__(24)(function () {
   return Object.defineProperty(__webpack_require__(16)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
@@ -865,7 +869,7 @@ module.exports = !__webpack_require__(5) && !__webpack_require__(24)(function ()
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(11);
+var isObject = __webpack_require__(5);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function (it, S) {
@@ -882,7 +886,7 @@ module.exports = function (it, S) {
 /* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(3);
+module.exports = __webpack_require__(4);
 
 
 /***/ }),
@@ -897,7 +901,7 @@ var setToStringTag = __webpack_require__(19);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(3)(IteratorPrototype, __webpack_require__(1)('iterator'), function () { return this; });
+__webpack_require__(4)(IteratorPrototype, __webpack_require__(1)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -910,7 +914,7 @@ module.exports = function (Constructor, NAME, next) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject = __webpack_require__(4);
+var anObject = __webpack_require__(2);
 var dPs = __webpack_require__(46);
 var enumBugKeys = __webpack_require__(29);
 var IE_PROTO = __webpack_require__(18)('IE_PROTO');
@@ -956,11 +960,11 @@ module.exports = Object.create || function create(O, Properties) {
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(10);
-var anObject = __webpack_require__(4);
+var dP = __webpack_require__(11);
+var anObject = __webpack_require__(2);
 var getKeys = __webpack_require__(47);
 
-module.exports = __webpack_require__(5) ? Object.defineProperties : function defineProperties(O, Properties) {
+module.exports = __webpack_require__(6) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
   var keys = getKeys(Properties);
   var length = keys.length;
@@ -1097,8 +1101,8 @@ module.exports = function (it) {
 
 __webpack_require__(55);
 var global = __webpack_require__(0);
-var hide = __webpack_require__(3);
-var Iterators = __webpack_require__(6);
+var hide = __webpack_require__(4);
+var Iterators = __webpack_require__(7);
 var TO_STRING_TAG = __webpack_require__(1)('toStringTag');
 
 var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
@@ -1124,7 +1128,7 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 var addToUnscopables = __webpack_require__(56);
 var step = __webpack_require__(57);
-var Iterators = __webpack_require__(6);
+var Iterators = __webpack_require__(7);
 var toIObject = __webpack_require__(17);
 
 // 22.1.3.4 Array.prototype.entries()
@@ -1181,11 +1185,11 @@ module.exports = function (done, value) {
 
 var LIBRARY = __webpack_require__(23);
 var global = __webpack_require__(0);
-var ctx = __webpack_require__(8);
+var ctx = __webpack_require__(9);
 var classof = __webpack_require__(31);
-var $export = __webpack_require__(7);
-var isObject = __webpack_require__(11);
-var aFunction = __webpack_require__(9);
+var $export = __webpack_require__(8);
+var isObject = __webpack_require__(5);
+var aFunction = __webpack_require__(10);
 var anInstance = __webpack_require__(59);
 var forOf = __webpack_require__(60);
 var speciesConstructor = __webpack_require__(32);
@@ -1216,12 +1220,6 @@ var USE_NATIVE = !!function () {
 }();
 
 // helpers
-var sameConstructor = LIBRARY ? function (a, b) {
-  // with library wrapper special case
-  return a === b || a === $Promise && b === Wrapper;
-} : function (a, b) {
-  return a === b;
-};
 var isThenable = function (it) {
   var then;
   return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
@@ -1393,7 +1391,7 @@ if (!USE_NATIVE) {
     this.reject = ctx($reject, promise, 1);
   };
   newPromiseCapabilityModule.f = newPromiseCapability = function (C) {
-    return sameConstructor($Promise, C)
+    return C === $Promise || C === Wrapper
       ? new OwnPromiseCapability(C)
       : newGenericPromiseCapability(C);
   };
@@ -1402,7 +1400,7 @@ if (!USE_NATIVE) {
 $export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
 __webpack_require__(19)($Promise, PROMISE);
 __webpack_require__(67)(PROMISE);
-Wrapper = __webpack_require__(2)[PROMISE];
+Wrapper = __webpack_require__(3)[PROMISE];
 
 // statics
 $export($export.S + $export.F * !USE_NATIVE, PROMISE, {
@@ -1417,9 +1415,7 @@ $export($export.S + $export.F * !USE_NATIVE, PROMISE, {
 $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
   // 25.4.4.6 Promise.resolve(x)
   resolve: function resolve(x) {
-    // instanceof instead of internal slot check because we should fix it without replacement native Promise core
-    if (x instanceof $Promise && sameConstructor(x.constructor, this)) return x;
-    return promiseResolve(this, x);
+    return promiseResolve(LIBRARY && this === Wrapper ? $Promise : this, x);
   }
 });
 $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(68)(function (iter) {
@@ -1483,10 +1479,10 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ctx = __webpack_require__(8);
+var ctx = __webpack_require__(9);
 var call = __webpack_require__(61);
 var isArrayIter = __webpack_require__(62);
-var anObject = __webpack_require__(4);
+var anObject = __webpack_require__(2);
 var toLength = __webpack_require__(26);
 var getIterFn = __webpack_require__(63);
 var BREAK = {};
@@ -1515,7 +1511,7 @@ exports.RETURN = RETURN;
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
-var anObject = __webpack_require__(4);
+var anObject = __webpack_require__(2);
 module.exports = function (iterator, fn, value, entries) {
   try {
     return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -1533,7 +1529,7 @@ module.exports = function (iterator, fn, value, entries) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
-var Iterators = __webpack_require__(6);
+var Iterators = __webpack_require__(7);
 var ITERATOR = __webpack_require__(1)('iterator');
 var ArrayProto = Array.prototype;
 
@@ -1548,8 +1544,8 @@ module.exports = function (it) {
 
 var classof = __webpack_require__(31);
 var ITERATOR = __webpack_require__(1)('iterator');
-var Iterators = __webpack_require__(6);
-module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
+var Iterators = __webpack_require__(7);
+module.exports = __webpack_require__(3).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
     || it['@@iterator']
     || Iterators[classof(it)];
@@ -1656,7 +1652,7 @@ module.exports = function () {
 /* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hide = __webpack_require__(3);
+var hide = __webpack_require__(4);
 module.exports = function (target, src, safe) {
   for (var key in src) {
     if (safe && target[key]) target[key] = src[key];
@@ -1672,9 +1668,9 @@ module.exports = function (target, src, safe) {
 "use strict";
 
 var global = __webpack_require__(0);
-var core = __webpack_require__(2);
-var dP = __webpack_require__(10);
-var DESCRIPTORS = __webpack_require__(5);
+var core = __webpack_require__(3);
+var dP = __webpack_require__(11);
+var DESCRIPTORS = __webpack_require__(6);
 var SPECIES = __webpack_require__(1)('species');
 
 module.exports = function (KEY) {
@@ -1721,8 +1717,8 @@ module.exports = function (exec, skipClosing) {
 "use strict";
 // https://github.com/tc39/proposal-promise-finally
 
-var $export = __webpack_require__(7);
-var core = __webpack_require__(2);
+var $export = __webpack_require__(8);
+var core = __webpack_require__(3);
 var global = __webpack_require__(0);
 var speciesConstructor = __webpack_require__(32);
 var promiseResolve = __webpack_require__(35);
@@ -1748,7 +1744,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 "use strict";
 
 // https://github.com/tc39/proposal-promise-try
-var $export = __webpack_require__(7);
+var $export = __webpack_require__(8);
 var newPromiseCapability = __webpack_require__(20);
 var perform = __webpack_require__(34);
 
