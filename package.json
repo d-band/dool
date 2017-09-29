@@ -85,7 +85,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "chai": "^4.0.1",
-    "coveralls": "^2.11.12",
+    "coveralls": "^3.0.0",
     "eslint": "^4.1.0",
     "eslint-config-standard": "^10.0.0",
     "eslint-plugin-import": "^2.3.0",
