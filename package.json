@@ -37,7 +37,7 @@
     "css-loader": "^0.28.3",
     "dool-init": "^2.0.1",
     "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^0.11.0",
+    "file-loader": "^1.1.2",
     "glob": "^7.1.2",
     "ip": "^1.1.5",
     "is-plain-object": "^2.0.3",
