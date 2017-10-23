@@ -52,7 +52,7 @@
     "webpack": "^3.1.0",
     "webpack-dev-server": "^2.5.1",
     "worker-farm": "^1.4.1",
-    "yargs": "^9.0.1"
+    "yargs": "^10.0.3"
   },
   "repository": {
     "type": "git",
