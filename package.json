@@ -98,6 +98,6 @@
     "postcss-cssnext": "^3.0.0",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.1",
-    "webpack-md5-hash": "^0.0.5"
+    "webpack-md5-hash": "^0.0.6"
   }
 }
