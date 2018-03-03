@@ -48,7 +48,7 @@
     "map-json-webpack-plugin": "^1.1.0",
     "postcss-loader": "^2.0.0",
     "style-loader": "^0.20.0",
-    "url-loader": "^0.6.1",
+    "url-loader": "^1.0.0",
     "webpack": "^3.1.0",
     "webpack-dev-server": "^2.5.1",
     "worker-farm": "^1.4.1",
