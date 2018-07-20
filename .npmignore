@@ -1,5 +1,9 @@
 .idea
 .DS_Store
+.nyc_output/
+.babelrc
+.editorconfig
+.eslintrc
 tmp
 node_modules
 examples

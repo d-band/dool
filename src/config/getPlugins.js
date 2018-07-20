@@ -1,5 +1,3 @@
-'use strict';
-
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { CssEntryPlugin } from '../plugins';

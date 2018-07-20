@@ -1,5 +1,3 @@
-'use strict';
-
 import { green, cyan } from '../utils/color';
 import { ProgressPlugin } from 'webpack';
 
