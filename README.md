@@ -84,7 +84,7 @@ $ dool build -h
   publicPath: String,
   outputPath: String,
   babelPlugins: Array,
-  postcssPlugins: Object,
+  postcssPlugins: Object | Array,
   autoprefixer: false | Object,
   externals: Object,
   extract: Boolean,
