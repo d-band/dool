@@ -20,6 +20,7 @@ export default (args) => {
       children: verbose,
       chunks: verbose,
       modules: verbose,
+      entrypoints: verbose,
       chunkModules: verbose,
       hash: verbose,
       version: verbose

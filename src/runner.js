@@ -21,6 +21,7 @@ export default function run ({ options, entry }, callback) {
       children: verb,
       chunks: verb,
       modules: verb,
+      entrypoints: verb,
       chunkModules: verb,
       hash: verb,
       version: verb

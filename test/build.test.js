@@ -75,7 +75,8 @@ describe('src/build', function () {
   });
   it('should support custom path', done => {
     testBuild({
-      hash: true
+      hash: true,
+      mode: 'production'
     }, 'custom-path', done);
   });
   it('should support define', done => {

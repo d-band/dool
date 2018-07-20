@@ -3,13 +3,17 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import babelrc from './babelrc';
 
 function getCSSLoaders ({
+  mode,
   extract,
   compress,
   autoprefixer,
   CSSSourceMap,
   postcssPlugins
 }, modules) {
-  const hasMap = CSSSourceMap !== false;
+  let hasMap = mode === 'development';
+  if (typeof CSSSourceMap === 'boolean') {
+    hasMap = CSSSourceMap;
+  }
   const cssExtraOptions = modules ? {
     modules: true,
     localIdentName: '[local]_[hash:base64:5]'
