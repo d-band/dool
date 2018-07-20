@@ -67,9 +67,29 @@ describe('src/build', function () {
   it('should support cluster', done => {
     testBuild({}, 'cluster', done);
   });
-  it('should support common file', done => {
-    testBuild({}, 'common-file', done);
+
+  const commonsObj = {
+    name: 'common',
+    chunks: 'initial',
+    minChunks: 2,
+    enforce: true
+  };
+  it('should support common file [boolean]', done => {
+    testBuild({
+      commons: true
+    }, 'common-file', done);
   });
+  it('should support common file [array]', done => {
+    testBuild({
+      commons: [commonsObj]
+    }, 'common-file', done);
+  });
+  it('should support common file [object]', done => {
+    testBuild({
+      commons: commonsObj
+    }, 'common-file', done);
+  });
+
   it('should support custom loader', done => {
     testBuild({}, 'custom-loader', done);
   });
