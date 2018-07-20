@@ -5,7 +5,7 @@ const RE_JS_MAP = /\.js(|\.map)$/i;
 export default class CssEntryPlugin {
   apply (compiler) {
     compiler.hooks.compilation.tap('CssEntryPlugin', (compilation) => {
-      compilation.mainTemplate.hooks.renderManifest.tap('CssEntryPlugin', (result, options) => {
+      compilation.mainTemplate.hooks.renderManifest.tap('CssEntryPlugin', (result) => {
         for (const file of result) {
           const { filenameTemplate, pathOptions } = file;
           const { chunk } = pathOptions || {};

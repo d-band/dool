@@ -18,8 +18,8 @@ export default ({
   if (extract) {
     plugins.push(new CssEntryPlugin());
     plugins.push(new MiniCssExtractPlugin({
-      filename: hash ? '[name]-[hash].css' : '[name].css',
-      chunkFilename: hash ? '[id]-[hash].css' : '[id].css'
+      filename: hash ? '[name]-[contenthash].css' : '[name].css',
+      chunkFilename: hash ? '[id]-[contenthash].css' : '[id].css'
     }));
   }
   return plugins;
