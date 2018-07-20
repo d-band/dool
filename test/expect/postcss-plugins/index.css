@@ -1,21 +1,29 @@
 /* custom properties */
+:root {
+  --fontSize: 1rem;
+  --mainColor: rgba(18, 52, 86, 0.47059);
+  --highlightColor: hwb(190, 35%, 20%);
+}
 
 /* custom media queries */
 
 /* some var() & calc() */
 body {
   color: rgba(18, 52, 86, 0.47059);
-  font-size: 16px;
+  color: var(--mainColor);
   font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  padding: calc(0.5rem + 1px);
+  font-size: var(--fontSize);
+  line-height: calc(1rem * 1.5);
+  line-height: calc(var(--fontSize) * 1.5);
+  padding: calc((1rem / 2) + 1px);
+  padding: calc((var(--fontSize) / 2) + 1px);
 }
 
 /* custom media query usage */
 @media (max-width: 50rem) {
   body {
-    font-size: 1.2rem;
+    font-size: calc(1rem * 1.2);
+    font-size: calc(var(--fontSize) * 1.2);
   }
 }
 
@@ -32,22 +40,35 @@ h6 {
 
 /* colors stuff */
 a {
-  color: rgb(89, 185, 204);
-  -webkit-transition: color 1s;
+  color: hwb(190, 35%, 20%);
+  color: var(--highlightColor);
   transition: color 1s; /* autoprefixed ! */
 }
 a:hover {
-  color: rgba(255, 255, 255, 0.5)
+  color: gray(255, 50%)
 }
 a:active {
   color: #639
 }
 a:focus {
-  background-color: rgba(255, 153, 0, .33);
-  outline: 3px solid hsl(360, 60%, 50%);
+  background-color: rgba(255, 153, 0, 0.33);
+  outline: 3px solid hsl(1turn, 60%, 50%);
 }
 a:link,a:visited {
-  color: rgb(89, 142, 153)
+  color: color(hwb(190, 35%, 20%) blackness(+20%));
+  color: color(var(--highlightColor) blackness(+20%))
+}
+a:-webkit-any-link {
+  color: color(hwb(190, 35%, 20%) blackness(+20%));
+  color: color(var(--highlightColor) blackness(+20%))
+}
+a:-moz-any-link {
+  color: color(hwb(190, 35%, 20%) blackness(+20%));
+  color: color(var(--highlightColor) blackness(+20%))
+}
+a:any-link {
+  color: color(hwb(190, 35%, 20%) blackness(+20%));
+  color: color(var(--highlightColor) blackness(+20%))
 }
 
 /* font stuff */
@@ -64,12 +85,10 @@ table {
 
 /* filters */
 .blur {
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="4" /></filter></svg>#filter');
   -webkit-filter: blur(4px);
           filter: blur(4px);
 }
 .sepia {
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.5144 0.6152000000000001 0.1512 0 0 0.2792 0.7488 0.13440000000000002 0 0 0.21760000000000002 0.4272 0.30479999999999996 0 0 0 0 0 1 0" /></filter></svg>#filter');
   -webkit-filter: sepia(.8);
           filter: sepia(.8);
 }

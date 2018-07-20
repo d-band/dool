@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import decamelize from 'decamelize';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import babelrc from './babelrc';
 
@@ -26,30 +27,37 @@ function getCSSLoaders ({
       ...cssExtraOptions
     }
   };
-  const defaultPlugin = {};
+  const plugins = [];
   if (autoprefixer !== false) {
     const defaultOpt = {
       browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4']
     };
-    defaultPlugin.autoprefixer = {
+    plugins.push(require('autoprefixer')({
       ...defaultOpt,
       ...autoprefixer
-    };
+    }));
   }
   if (compress) {
-    defaultPlugin.cssnano = {};
+    plugins.push(require('cssnano')());
+  }
+  if (postcssPlugins) {
+    if (Array.isArray(postcssPlugins)) {
+      postcssPlugins.forEach(plugin => {
+        plugins.push(plugin);
+      });
+    } else {
+      Object.keys(postcssPlugins).forEach(k => {
+        const fn = require(decamelize(k, '-'));
+        plugins.push(fn(postcssPlugins[k]));
+      });
+    }
   }
   const postcss = {
     loader: 'postcss-loader',
     options: {
+      ident: 'postcss',
       sourceMap: hasMap,
-      config: {
-        path: __dirname,
-        ctx: {
-          ...defaultPlugin,
-          ...postcssPlugins
-        }
-      }
+      plugins
     }
   };
   const less = {

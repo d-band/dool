@@ -55,9 +55,18 @@ describe('src/build', function () {
   it('should support babel plugins', done => {
     testBuild({}, 'babel-plugins', done);
   });
-  it('should support postcss plugins', done => {
-    testBuild({}, 'postcss-plugins', done);
+
+  it('should support postcss plugins [object]', done => {
+    testBuild({
+      postcssPlugins: { postcssPresetEnv: { stage: 0 } }
+    }, 'postcss-plugins', done);
   });
+  it('should support postcss plugins [array]', done => {
+    testBuild({
+      postcssPlugins: [require('postcss-preset-env')({ stage: 0 })]
+    }, 'postcss-plugins', done);
+  });
+
   it('should support css modules', done => {
     testBuild({}, 'css-modules', done);
   });
