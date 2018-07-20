@@ -1,7 +1,7 @@
 function ErrorPlugin(options) {}
 
 ErrorPlugin.prototype.apply = function(compiler) {
-  compiler.plugin('emit', function(compilation, callback) {
+  compiler.hooks.emit.tapAsync('ErrorPlugin', (compilation, callback) => {
     callback(new Error('error plugin'));
   });
 };

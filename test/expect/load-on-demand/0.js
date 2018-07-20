@@ -1,10 +1,14 @@
-webpackJsonp([0],[
-/* 0 */,
-/* 1 */
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
+
+/***/ "./b.js":
+/*!**************!*\
+  !*** ./b.js ***!
+  \**************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-
-module.exports = 'b';
+eval("\nmodule.exports = 'b';\n\n//# sourceURL=webpack:///./b.js?");
 
 /***/ })
-]);
+
+}]);

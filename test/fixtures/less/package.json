@@ -1,5 +1,6 @@
 {
   "files": [
+    "./main.js",
     "./index.less"
   ]
 }

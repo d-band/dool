@@ -1,3 +1,9 @@
+.a .color {
+  color: red;
+}
+.b .color {
+  color: blue;
+}
 /* index.less */
 h1 {
   color: blue;
@@ -42,3 +48,4 @@ em {
 .index .foo {
   position: absolute 0;
 }
+

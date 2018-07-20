@@ -3,7 +3,9 @@ import webpack from 'webpack';
 import getEntry from './getEntry';
 import getRules from './getRules';
 import getPlugins from './getPlugins';
+import setOptimize from './setOptimize';
 import mergeConfig from './mergeConfig';
+import { MapJsonPlugin } from '../plugins';
 
 function getOutput ({ cwd, hash, outputPath, publicPath }) {
   const name = hash ? '[name]-[chunkhash].js' : '[name].js';
@@ -20,6 +22,7 @@ function getOutput ({ cwd, hash, outputPath, publicPath }) {
 
 export default function getConfig (options, entry) {
   const base = {
+    mode: options.mode,
     context: options.cwd,
     output: getOutput(options),
     devtool: options.devtool,
@@ -42,10 +45,13 @@ export default function getConfig (options, entry) {
       maxEntrypointSize: 400000
     }
   };
+  // common split
+  setOptimize(options, base);
+  // map hash
   if (options.hash) {
     base.plugins = [
       ...base.plugins,
-      require('map-json-webpack-plugin')()
+      new MapJsonPlugin()
     ];
   }
   const cfgFile = resolve(options.cwd, options.config || 'webpack.config.js');

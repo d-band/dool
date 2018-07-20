@@ -1,4 +1,4 @@
-/* index.less */
+/* home.less */
 h1 {
   color: blue;
 }
@@ -32,3 +32,4 @@ em {
             transform: rotate(90deg);
   }
 }
+

@@ -1,8 +1,9 @@
 import { resolve } from 'path';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import babelrc from './babelrc';
 
 function getCSSLoaders ({
+  extract,
   compress,
   autoprefixer,
   CSSSourceMap,
@@ -21,15 +22,19 @@ function getCSSLoaders ({
       ...cssExtraOptions
     }
   };
-  const defaultOpt = {
-    browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4']
-  };
-  const defaultPlugin = autoprefixer !== false ? {
-    autoprefixer: {
+  const defaultPlugin = {};
+  if (autoprefixer !== false) {
+    const defaultOpt = {
+      browsers: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 8', 'iOS >= 8', 'Android >= 4']
+    };
+    defaultPlugin.autoprefixer = {
       ...defaultOpt,
       ...autoprefixer
-    }
-  } : null;
+    };
+  }
+  if (compress) {
+    defaultPlugin.cssnano = {};
+  }
   const postcss = {
     loader: 'postcss-loader',
     options: {
@@ -49,9 +54,10 @@ function getCSSLoaders ({
       sourceMap: hasMap
     }
   };
+  const fallback = extract ? MiniCssExtractPlugin.loader : 'style-loader';
   return {
-    css: ['style-loader', css, postcss],
-    less: ['style-loader', css, postcss, less]
+    css: [fallback, css, postcss],
+    less: [fallback, css, postcss, less]
   };
 }
 
@@ -66,38 +72,25 @@ function getModulesPaths ({ cwd, CSSModules }) {
 function getCSSRules (options) {
   const base = getCSSLoaders(options);
   const paths = getModulesPaths(options);
-  const { extract } = options;
   let rules = [{
     test: /\.css$/,
     exclude: paths,
-    use: extract ? ExtractTextPlugin.extract({
-      fallback: 'style-loader',
-      use: base.css.slice(1)
-    }) : base.css
+    use: base.css
   }, {
     test: /\.less$/,
     exclude: paths,
-    use: extract ? ExtractTextPlugin.extract({
-      fallback: 'style-loader',
-      use: base.less.slice(1)
-    }) : base.less
+    use: base.less
   }];
   if (paths) {
     const modules = getCSSLoaders(options, true);
     const moduleRules = [{
       test: /\.css$/,
       include: paths,
-      use: extract ? ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: modules.css.slice(1)
-      }) : modules.css
+      use: modules.css
     }, {
       test: /\.less$/,
       include: paths,
-      use: extract ? ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: modules.less.slice(1)
-      }) : modules.less
+      use: modules.less
     }];
     rules = [...rules, ...moduleRules];
   }

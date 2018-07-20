@@ -1,11 +1,10 @@
-'use strict';
-
-import { join } from 'path';
-import fs from 'fs';
+import { join, dirname } from 'path';
+import fs from 'fs-extra';
 import glob from 'glob';
-import build from '../src/build';
+import rimraf from 'rimraf';
 import assign from 'object-assign';
 import { expect } from 'chai';
+import build from '../src/build';
 
 function assert (actualDir, _expect) {
   const expectDir = join(__dirname, 'expect', _expect);
@@ -19,6 +18,7 @@ function assert (actualDir, _expect) {
     const expectFile = join(expectDir, file);
 
     if (process.env.GEN_EXPECT) {
+      fs.mkdirsSync(dirname(expectFile));
       fs.writeFileSync(expectFile, fs.readFileSync(actualFile));
     }
 
@@ -32,13 +32,14 @@ function testBuild (args, fixture, done) {
   const cwd = join(__dirname, 'fixtures', fixture);
   const outputPath = join(cwd, 'dist');
   const defaultConfig = {
+    mode: 'development',
     cwd: cwd,
     verbose: false,
     extract: true,
     compress: false,
     outputPath: outputPath
   };
-
+  rimraf.sync(outputPath);
   build(assign({}, defaultConfig, args), err => {
     assert(outputPath, fixture);
     done(err);

@@ -1,3 +1,4 @@
 import progress from './progress';
 import CssEntryPlugin from './CssEntryPlugin';
-export { progress, CssEntryPlugin };
+import MapJsonPlugin from './MapJsonPlugin';
+export { progress, CssEntryPlugin, MapJsonPlugin };

@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"index.css","sourceRoot":""}
+{"version":3,"sources":["webpack:///./index.less"],"names":[],"mappings":"AAAA,OAAO,UAAU,cAAc,Y","file":"index.css","sourcesContent":[".hello{color:red}.hello .world{height:20px}"],"sourceRoot":""}

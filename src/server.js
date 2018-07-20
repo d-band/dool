@@ -5,8 +5,8 @@ import { getOptions } from './utils';
 import getConfig from './config';
 
 export default (args) => {
-  const env = 'development';
-  process.env.NODE_ENV = process.env.NODE_ENV || env;
+  args.mode = args.mode || 'development';
+  const env = process.env.NODE_ENV || 'development';
   const options = getOptions(args, env);
   const { verbose, https, port } = options;
   const devServer = {
