@@ -1,4 +1,5 @@
 {
+  mode: 'production',
   files: 'src/index.js',
   filesBase: 'src',
   CSSModules: ['src'],

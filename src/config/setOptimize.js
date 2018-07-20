@@ -18,7 +18,7 @@ export default ({ commons, compress }, config) => {
     }
     config.optimization.splitChunks = { cacheGroups };
   }
-  if (compress) {
-    config.optimization.minimize = true;
+  if (typeof compress === 'boolean') {
+    config.optimization.minimize = compress;
   }
 };
