@@ -17,7 +17,7 @@ export function splitBy (obj, max) {
   return arr;
 }
 
-function merge (oldObj, newObj) {
+export function merge (oldObj, newObj) {
   for (const key in newObj) {
     if (Array.isArray(newObj[key]) && Array.isArray(oldObj[key])) {
       oldObj[key] = oldObj[key].concat(newObj[key]);

@@ -5,6 +5,7 @@ import rimraf from 'rimraf';
 import assign from 'object-assign';
 import { expect } from 'chai';
 import build from '../src/build';
+import { merge } from '../src/utils';
 
 function assert (actualDir, _expect) {
   const expectDir = join(__dirname, 'expect', _expect);
@@ -49,6 +50,20 @@ function testBuild (args, fixture, done) {
 describe('src/build', function () {
   this.timeout(0);
 
+  it('test merge function', () => {
+    const obj1 = { a: 'a' };
+    const obj2 = { a: ['a'] };
+    const obj3 = { a: { b: 'b' } };
+
+    merge(obj1, { b: 'b' });
+    merge(obj2, { a: ['b'] });
+    merge(obj3, { a: { c: 'c' } });
+
+    expect(obj1).to.deep.equal({ a: 'a', b: 'b' });
+    expect(obj2).to.deep.equal({ a: ['a', 'b'] });
+    expect(obj3).to.deep.equal({ a: { b: 'b', c: 'c' } });
+  });
+
   it('should support base64', done => {
     testBuild({ publicPath: '/foo/' }, 'base64', done);
   });
@@ -72,6 +87,9 @@ describe('src/build', function () {
   });
   it('should support css modules in js', done => {
     testBuild({}, 'css-modules-injs', done);
+  });
+  it('should support css modules query', done => {
+    testBuild({}, 'css-modules-query', done);
   });
   it('should support cluster', done => {
     testBuild({}, 'cluster', done);
@@ -151,15 +169,15 @@ describe('src/build', function () {
     });
   });
   it('should throw error', done => {
-    console.error = process.exit = () => {};
+    console.error = () => {};
     testBuild({}, 'error', function (err) {
+      process.removeAllListeners('exit');
       expect(err).to.be.an('error');
       done();
     });
   });
   it('should throw merge error', done => {
     try {
-      console.error = process.exit = () => {};
       testBuild({}, 'merge-error');
     } catch (e) {
       expect(e).to.be.an('error');

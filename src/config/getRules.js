@@ -3,18 +3,23 @@ import decamelize from 'decamelize';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import babelrc from './babelrc';
 
-function getCSSLoaders ({
+function getStyleRule ({
   mode,
   extract,
   compress,
   autoprefixer,
   CSSSourceMap,
   postcssPlugins
-}, modules) {
+}, modules, type) {
   let hasMap = mode === 'development';
   if (typeof CSSSourceMap === 'boolean') {
     hasMap = CSSSourceMap;
   }
+
+  // config style-loader
+  const fallback = extract ? MiniCssExtractPlugin.loader : 'style-loader';
+
+  // config css-loader
   const cssExtraOptions = modules ? {
     modules: true,
     localIdentName: '[local]_[hash:base64:5]'
@@ -23,10 +28,11 @@ function getCSSLoaders ({
     loader: 'css-loader',
     options: {
       sourceMap: hasMap,
-      minimize: compress,
       ...cssExtraOptions
     }
   };
+
+  // config postcss-loader
   const plugins = [];
   if (autoprefixer !== false) {
     const defaultOpt = {
@@ -60,17 +66,27 @@ function getCSSLoaders ({
       plugins
     }
   };
-  const less = {
-    loader: 'less-loader',
-    options: {
-      sourceMap: hasMap
-    }
-  };
-  const fallback = extract ? MiniCssExtractPlugin.loader : 'style-loader';
-  return {
-    css: [fallback, css, postcss],
-    less: [fallback, css, postcss, less]
-  };
+
+  const loaders = [fallback, css, postcss];
+
+  // config less-loader
+  if (type === 'less') {
+    loaders.push({
+      loader: 'less-loader',
+      options: {
+        sourceMap: hasMap
+      }
+    });
+  }
+  if (type === 'sass') {
+    loaders.push({
+      loader: 'sass-loader',
+      options: {
+        sourceMap: hasMap
+      }
+    });
+  }
+  return loaders;
 }
 
 function getModulesPaths ({ cwd, CSSModules }) {
@@ -82,30 +98,38 @@ function getModulesPaths ({ cwd, CSSModules }) {
 }
 
 function getCSSRules (options) {
-  const base = getCSSLoaders(options);
-  const paths = getModulesPaths(options);
-  let rules = [{
-    test: /\.css$/,
-    exclude: paths,
-    use: base.css
+  const rules = [];
+  const modulesPaths = getModulesPaths(options);
+
+  [{
+    type: 'css',
+    test: /\.css$/
   }, {
-    test: /\.less$/,
-    exclude: paths,
-    use: base.less
-  }];
-  if (paths) {
-    const modules = getCSSLoaders(options, true);
-    const moduleRules = [{
-      test: /\.css$/,
-      include: paths,
-      use: modules.css
-    }, {
-      test: /\.less$/,
-      include: paths,
-      use: modules.less
-    }];
-    rules = [...rules, ...moduleRules];
-  }
+    type: 'less',
+    test: /\.less$/
+  }, {
+    type: 'sass',
+    test: /\.(sass|scss)$/
+  }].forEach(v => {
+    rules.push({
+      test: v.test,
+      exclude: modulesPaths,
+      oneOf: [{
+        resourceQuery: /module/,
+        use: getStyleRule(options, true, v.type)
+      }, {
+        use: getStyleRule(options, false, v.type)
+      }]
+    });
+    if (modulesPaths) {
+      rules.push({
+        test: v.test,
+        include: modulesPaths,
+        use: getStyleRule(options, true, v.type)
+      });
+    }
+  });
+
   return rules;
 }
 

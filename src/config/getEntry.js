@@ -25,11 +25,12 @@ export default ({
       cwd,
       nodir: true
     })].forEach(file => {
+      const RE = /\.(css|less|sass|scss)$/i;
       const base = filesBase || '.';
       let key = path.relative(base, file);
       let ext = path.extname(file);
-      if (ext === '.css' || ext === '.less') {
-        key = key.replace(/\.(css|less)$/, '.css');
+      if (RE.test(ext)) {
+        key = key.replace(RE, '.css');
       } else {
         key = key.replace(new RegExp(ext + '$'), '');
       }
