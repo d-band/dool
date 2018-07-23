@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
