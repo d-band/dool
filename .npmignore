@@ -4,6 +4,7 @@
 .babelrc
 .editorconfig
 .eslintrc
+.travis.yml
 tmp
 node_modules
 examples
