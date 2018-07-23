@@ -10,7 +10,7 @@ export default class CssEntryPlugin {
           const { filenameTemplate, pathOptions } = file;
           const { chunk } = pathOptions || {};
           const name = chunk && (chunk.name || chunk.id);
-          if (name && RE_CSS.test(name) && typeof filenameTemplate !== 'function') {
+          if (RE_CSS.test(name) && typeof filenameTemplate === 'string') {
             const rename = name.replace(RE_CSS, '');
             file.filenameTemplate = filenameTemplate.replace(RE_NAME, rename);
           }
