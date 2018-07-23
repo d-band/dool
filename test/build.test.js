@@ -73,7 +73,7 @@ describe('src/build', function () {
 
   it('should support postcss plugins [object]', done => {
     testBuild({
-      postcssPlugins: { postcssPresetEnv: { stage: 0 } }
+      postcssPlugins: { 'postcss-preset-env': { stage: 0 } }
     }, 'postcss-plugins', done);
   });
   it('should support postcss plugins [array]', done => {

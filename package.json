@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
@@ -36,7 +36,6 @@
     "babel-preset-stage-0": "^6.22.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.3",
-    "decamelize": "^2.0.0",
     "dool-init": "^2.0.2",
     "file-loader": "^1.1.5",
     "fs-extra": "^7.0.0",

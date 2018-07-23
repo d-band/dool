@@ -1,5 +1,4 @@
 import { resolve } from 'path';
-import decamelize from 'decamelize';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import babelrc from './babelrc';
 
@@ -53,8 +52,8 @@ function getStyleRule ({
       });
     } else {
       Object.keys(postcssPlugins).forEach(k => {
-        const fn = require(decamelize(k, '-'));
-        plugins.push(fn(postcssPlugins[k]));
+        const plugin = require(k);
+        plugins.push(plugin(postcssPlugins[k]));
       });
     }
   }
