@@ -1,10 +1,10 @@
 import { join, dirname } from 'path';
 import fs from 'fs-extra';
 import glob from 'glob';
-import rimraf from 'rimraf';
 import assign from 'object-assign';
 import { expect } from 'chai';
 import build from '../src/build';
+import clean from '../src/clean';
 import { merge } from '../src/utils';
 
 function assert (actualDir, _expect) {
@@ -40,8 +40,9 @@ function testBuild (args, fixture, done) {
     compress: false,
     outputPath: outputPath
   };
-  rimraf.sync(outputPath);
-  build(assign({}, defaultConfig, args), err => {
+  const params = assign({}, defaultConfig, args);
+  clean(params);
+  build(params, err => {
     assert(outputPath, fixture);
     done(err);
   });

@@ -85,6 +85,10 @@ const buildCmd = argv => {
   argv.cwd = process.cwd();
   require('../lib/build')(argv);
 };
+const cleanCmd = argv => {
+  argv.cwd = process.cwd();
+  require('../lib/clean')(argv);
+};
 const serverCmd = argv => {
   argv.cwd = process.cwd();
   require('../lib/server')(argv);
@@ -94,6 +98,7 @@ require('yargs')
   .command('init', 'Initialize project', initOptions, initCmd)
   .command('build', 'Build project', getOptions(true), buildCmd)
   .command('server', 'Serve project', getOptions(false), serverCmd)
+  .command('clean', 'Clean project', getOptions(true), cleanCmd)
   .version(pkg.version).alias('version', 'v')
   .help(true).alias('help', 'h')
   .argv;
