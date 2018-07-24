@@ -23,12 +23,10 @@ export default class CssEntryPlugin {
         return RE_CSS.test(chunk.name);
       }).forEach(chunk => {
         // remove unused js files
-        chunk.files = chunk.files.filter(file => {
-          const isJS = RE_JS_MAP.test(file);
-          if (isJS) {
+        chunk.files.forEach(file => {
+          if (RE_JS_MAP.test(file)) {
             delete compilation.assets[file];
           }
-          return isJS;
         });
       });
       callback();
