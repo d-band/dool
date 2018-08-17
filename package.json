@@ -43,7 +43,7 @@
     "ip": "^1.1.5",
     "is-plain-object": "^2.0.3",
     "json-loader": "^0.5.4",
-    "json5": "^1.0.0",
+    "json5": "^2.0.0",
     "less": "^3.8.0",
     "less-loader": "^4.0.0",
     "map-json-webpack-plugin": "^1.1.0",
