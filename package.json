@@ -97,7 +97,7 @@
     "mocha": "^5.0.0",
     "nyc": "^12.0.2",
     "object-assign": "^4.1.0",
-    "postcss-preset-env": "^5.2.3",
+    "postcss-preset-env": "^6.0.0",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.1"
   }
