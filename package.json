@@ -37,7 +37,7 @@
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.3",
     "dool-init": "^2.0.2",
-    "file-loader": "^1.1.5",
+    "file-loader": "^2.0.0",
     "fs-extra": "^7.0.0",
     "glob": "^7.1.2",
     "ip": "^1.1.5",
