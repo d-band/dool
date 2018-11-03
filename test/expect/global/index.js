@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var $ = __webpack_require__(/*! jquery */ \"jquery\");\n$(function () {\n    $('#box').hide(333).show(333);\n});\n\n//# sourceURL=webpack:///./index.js?");
+eval("var $ = __webpack_require__(/*! jquery */ \"jquery\");\n\n$(function () {\n  $('#box').hide(333).show(333);\n});\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 

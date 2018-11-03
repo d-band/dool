@@ -2,7 +2,7 @@
   files: 'index.js',
   env: {
     production: {
-      babelPlugins: ['transform-runtime']
+      babelPlugins: ['@babel/plugin-transform-runtime']
     }
   }
 }

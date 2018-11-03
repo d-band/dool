@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\nmodule.exports = 'b';\n\n//# sourceURL=webpack:///./b.js?");
+eval("module.exports = 'b';\n\n//# sourceURL=webpack:///./b.js?");
 
 /***/ })
 

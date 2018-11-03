@@ -1,7 +1,7 @@
 /* custom properties */
 :root {
   --fontSize: 1rem;
-  --mainColor: rgba(18, 52, 86, 0.47059);
+  --mainColor: rgba(18,52,86,0.47059);
   --highlightColor: hwb(190, 35%, 20%);
 }
 
@@ -9,7 +9,7 @@
 
 /* some var() & calc() */
 body {
-  color: rgba(18, 52, 86, 0.47059);
+  color: rgba(18,52,86,0.47059);
   color: var(--mainColor);
   font-size: 1rem;
   font-size: var(--fontSize);
@@ -29,12 +29,7 @@ body {
 
 /* custom selectors */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   margin-top: 0
 }
 
@@ -105,6 +100,6 @@ body {
 
 /* system-ui font-family */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
 

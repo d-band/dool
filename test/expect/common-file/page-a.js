@@ -161,7 +161,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("\n__webpack_require__(/*! ./util */ \"./util.js\");\n\nconsole.log('a');\n\n//# sourceURL=webpack:///./page-a.js?");
+eval("__webpack_require__(/*! ./util */ \"./util.js\");\n\nconsole.log('a');\n\n//# sourceURL=webpack:///./page-a.js?");
 
 /***/ })
 
