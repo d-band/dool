@@ -163,7 +163,7 @@ export default (options) => {
       limit: 10000
     }
   }, {
-    test: /\.atpl$/,
-    loader: 'atpl-loader'
+    test: /\.(a?tpl)$/,
+    loader: 'etpl-loader'
   }, ...getCSSRules(options)];
 };
