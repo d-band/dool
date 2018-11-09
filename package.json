@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
@@ -111,7 +111,7 @@
     "mocha": "^5.0.0",
     "nyc": "^13.1.0",
     "object-assign": "^4.1.0",
-    "postcss-preset-env": "^6.3.0",
+    "postcss-preset-env": "^6.4.0",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.1"
   }

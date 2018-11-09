@@ -5,6 +5,7 @@ import { getOptions } from './utils';
 export default (args) => {
   args.mode = args.mode || 'production';
   const env = process.env.NODE_ENV || 'production';
+  process.env.NODE_ENV = env;
   const options = getOptions(args, env);
   const distPath = resolve(options.cwd, options.outputPath || './dist');
   fs.removeSync(distPath);
