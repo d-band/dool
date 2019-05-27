@@ -62,7 +62,7 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "map-json-webpack-plugin": "^1.2.0",
-    "mini-css-extract-plugin": "^0.6.0",
+    "mini-css-extract-plugin": "^0.7.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
