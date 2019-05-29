@@ -1,5 +1,6 @@
 {
   files: 'index.js',
+  devtool: false,
   env: {
     test: {
       babelPlugins: ['@babel/plugin-transform-runtime']

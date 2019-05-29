@@ -87,10 +87,6 @@
 /******/ ({
 
 /***/ "../../../node_modules/@babel/runtime/helpers/asyncToGenerator.js":
-/*!************************************************************************************************************!*\
-  !*** /Users/helloyou/Documents/js_pro/d-band/dool/node_modules/@babel/runtime/helpers/asyncToGenerator.js ***!
-  \************************************************************************************************************/
-/*! no static exports found */
 /***/ (function(module, exports) {
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
@@ -134,22 +130,14 @@ module.exports = _asyncToGenerator;
 /***/ }),
 
 /***/ "../../../node_modules/@babel/runtime/regenerator/index.js":
-/*!*****************************************************************************************************!*\
-  !*** /Users/helloyou/Documents/js_pro/d-band/dool/node_modules/@babel/runtime/regenerator/index.js ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ "../../../node_modules/regenerator-runtime/runtime.js");
+module.exports = __webpack_require__("../../../node_modules/regenerator-runtime/runtime.js");
 
 
 /***/ }),
 
 /***/ "../../../node_modules/regenerator-runtime/runtime.js":
-/*!************************************************************************************************!*\
-  !*** /Users/helloyou/Documents/js_pro/d-band/dool/node_modules/regenerator-runtime/runtime.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -883,17 +871,13 @@ try {
 /***/ }),
 
 /***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
-/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "../../../node_modules/@babel/runtime/helpers/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../../../node_modules/@babel/runtime/helpers/asyncToGenerator.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "../../../node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../../../node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
 
 
