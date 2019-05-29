@@ -92,6 +92,7 @@ $ dool build -h
   CSSSourceMap: Boolean,
   commons: true | Object | Array,
   compress: Boolean,
+  manifest: Boolean | Object,
   hash: Boolean,
   devtool: String,
   devServer: Object

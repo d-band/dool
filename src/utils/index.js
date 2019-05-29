@@ -60,9 +60,10 @@ export function getOptions (args, env) {
       options.entry = pkg.entry;
       options.files = pkg.files;
     }
-    if (!options.externals) {
-      options.externals = pkg.externals;
-    }
+    options.externals = {
+      ...pkg.externals,
+      ...options.externals
+    };
   }
   return options;
 }

@@ -93,7 +93,11 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var $ = __webpack_require__(/*! jquery */ \"jquery\");\n\n$(function () {\n  $('#box').hide(333).show(333);\n});\n\n//# sourceURL=webpack:///./index.js?");
+var $ = __webpack_require__(/*! jquery */ "jquery");
+
+$(function () {
+  $('#box').hide(333).show(333);
+});
 
 /***/ }),
 
@@ -104,7 +108,7 @@ eval("var $ = __webpack_require__(/*! jquery */ \"jquery\");\n\n$(function () {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = jQuery;\n\n//# sourceURL=webpack:///external_%22jQuery%22?");
+module.exports = jQuery;
 
 /***/ })
 

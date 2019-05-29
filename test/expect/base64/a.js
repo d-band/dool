@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./a.css?");
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -104,7 +104,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./a.cs
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./a.css */ \"./a.css\");\n\n//# sourceURL=webpack:///./a.js?");
+__webpack_require__(/*! ./a.css */ "./a.css");
 
 /***/ })
 

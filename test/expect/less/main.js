@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./a.less?");
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -105,7 +105,11 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./a.le
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _b_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./b.less */ \"./b.less\");\n/* harmony import */ var _b_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_b_less__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log('b js');\n\n//# sourceURL=webpack:///./b.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _b_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./b.less */ "./b.less");
+/* harmony import */ var _b_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_b_less__WEBPACK_IMPORTED_MODULE_0__);
+
+console.log('b js');
 
 /***/ }),
 
@@ -116,7 +120,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _b_l
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./b.less?");
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -128,7 +132,13 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./b.le
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _b__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./b */ \"./b.js\");\n/* harmony import */ var _a_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./a.less */ \"./a.less\");\n/* harmony import */ var _a_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_a_less__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconsole.log('index js');\n\n//# sourceURL=webpack:///./main.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _b__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./b */ "./b.js");
+/* harmony import */ var _a_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./a.less */ "./a.less");
+/* harmony import */ var _a_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_a_less__WEBPACK_IMPORTED_MODULE_1__);
+
+
+console.log('index js');
 
 /***/ })
 

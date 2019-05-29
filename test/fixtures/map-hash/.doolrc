@@ -1,3 +1,4 @@
 {
-  mode: 'production'
+  mode: 'production',
+  env: {}
 }

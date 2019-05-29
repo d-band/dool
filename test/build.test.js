@@ -38,6 +38,7 @@ function testBuild (args, fixture, done) {
     verbose: false,
     extract: true,
     compress: false,
+    devtool: false,
     outputPath: outputPath
   };
   const params = assign({}, defaultConfig, args);
@@ -124,6 +125,7 @@ describe('src/build', function () {
   it('should support custom path', done => {
     testBuild({
       hash: true,
+      manifest: true,
       mode: 'production'
     }, 'custom-path', done);
   });
@@ -145,7 +147,8 @@ describe('src/build', function () {
   });
   it('should support map hash', done => {
     testBuild({
-      hash: true
+      hash: true,
+      manifest: true
     }, 'map-hash', done);
   });
   it('should support compress default', done => {
@@ -153,6 +156,10 @@ describe('src/build', function () {
   });
   it('should support sourcemap', done => {
     testBuild({
+      manifest: {
+        publicPath: '/app/',
+        map: file => file
+      },
       compress: true,
       CSSSourceMap: false,
       devtool: 'source-map'

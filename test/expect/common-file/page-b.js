@@ -162,7 +162,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('fn-b');\n\n//# sourceURL=webpack:///./fn-b.js?");
+console.log('fn-b');
 
 /***/ }),
 
@@ -173,7 +173,11 @@ eval("console.log('fn-b');\n\n//# sourceURL=webpack:///./fn-b.js?");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./util */ \"./util.js\");\n\n__webpack_require__(/*! ./fn-b */ \"./fn-b.js\");\n\nconsole.log('b');\n\n//# sourceURL=webpack:///./page-b.js?");
+__webpack_require__(/*! ./util */ "./util.js");
+
+__webpack_require__(/*! ./fn-b */ "./fn-b.js");
+
+console.log('b');
 
 /***/ })
 

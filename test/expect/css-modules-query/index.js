@@ -93,7 +93,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\nmodule.exports = {\"a\":\"a_1xTPm\"};\n\n//# sourceURL=webpack:///./index.css?");
+// extracted by mini-css-extract-plugin
+module.exports = {"a":"a_1xTPm"};
 
 /***/ }),
 
@@ -105,7 +106,11 @@ eval("// extracted by mini-css-extract-plugin\nmodule.exports = {\"a\":\"a_1xTPm
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css?module */ \"./index.css?module\");\n/* harmony import */ var _index_css_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css_module__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log(_index_css_module__WEBPACK_IMPORTED_MODULE_0___default.a);\n\n//# sourceURL=webpack:///./index.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index_css_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css?module */ "./index.css?module");
+/* harmony import */ var _index_css_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css_module__WEBPACK_IMPORTED_MODULE_0__);
+
+console.log(_index_css_module__WEBPACK_IMPORTED_MODULE_0___default.a);
 
 /***/ })
 

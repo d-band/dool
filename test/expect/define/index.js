@@ -93,7 +93,10 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// NODE_ENV=debug dool build\nif (true) {\n  alert('debug mode');\n} else {}\n\n//# sourceURL=webpack:///./index.js?");
+// NODE_ENV=debug dool build
+if (true) {
+  alert('debug mode');
+} else {}
 
 /***/ })
 

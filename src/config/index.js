@@ -5,7 +5,6 @@ import getRules from './getRules';
 import getPlugins from './getPlugins';
 import setOptimize from './setOptimize';
 import mergeConfig from './mergeConfig';
-import { MapJsonPlugin } from '../plugins';
 
 function getOutput ({ cwd, hash, outputPath, publicPath }) {
   const name = hash ? '[name]-[chunkhash].js' : '[name].js';
@@ -47,13 +46,7 @@ export default function getConfig (options, entry) {
   };
   // common split
   setOptimize(options, base);
-  // map hash
-  if (options.hash) {
-    base.plugins = [
-      ...base.plugins,
-      new MapJsonPlugin()
-    ];
-  }
+
   const cfgFile = resolve(options.cwd, options.config || 'webpack.config.js');
   return mergeConfig(base, cfgFile, webpack, options);
 }
