@@ -11,6 +11,7 @@ export default (args) => {
   const options = getOptions(args, env);
   const { verbose, https, port } = options;
   const devServer = {
+    sockPort: port,
     disableHostCheck: true,
     https: https,
     headers: {

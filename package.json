@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
@@ -46,7 +46,7 @@
     "@babel/plugin-syntax-import-meta": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
@@ -66,8 +66,8 @@
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
-    "webpack": "^4.32.1",
-    "webpack-dev-server": "^3.4.1",
+    "webpack": "^4.33.0",
+    "webpack-dev-server": "^3.5.1",
     "webpack-manifest-plugin": "^2.0.4",
     "worker-farm": "^1.7.0",
     "yargs": "^13.2.4"
