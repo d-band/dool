@@ -20,8 +20,9 @@ function getStyleRule ({
 
   // config css-loader
   const cssExtraOptions = modules ? {
-    modules: true,
-    localIdentName: '[local]_[hash:base64:5]'
+    modules: {
+      localIdentName: '[local]_[hash:base64:5]'
+    }
   } : {};
   const css = {
     loader: 'css-loader',
