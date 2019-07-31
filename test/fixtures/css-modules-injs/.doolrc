@@ -2,7 +2,7 @@
   mode: 'production',
   files: 'src/index.js',
   filesBase: 'src',
-  CSSModules: ['src'],
-  CSSSourceMap: false,
+  cssModules: ['src'],
+  cssSourceMap: false,
   extract: false
 }

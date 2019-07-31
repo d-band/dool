@@ -164,7 +164,7 @@ describe('src/build', function () {
         map: file => file
       },
       compress: true,
-      CSSSourceMap: false,
+      cssSourceMap: false,
       devtool: 'source-map'
     }, 'sourcemap', done);
   });

@@ -7,12 +7,12 @@ function getStyleRule ({
   extract,
   compress,
   autoprefixer,
-  CSSSourceMap,
+  cssSourceMap,
   postcssPlugins
 }, modules, type) {
-  let hasMap = mode === 'development';
-  if (typeof CSSSourceMap === 'boolean') {
-    hasMap = CSSSourceMap;
+  let sourceMap = mode === 'development';
+  if (typeof cssSourceMap === 'boolean') {
+    sourceMap = cssSourceMap;
   }
 
   // config style-loader
@@ -27,7 +27,7 @@ function getStyleRule ({
   const css = {
     loader: 'css-loader',
     options: {
-      sourceMap: hasMap,
+      sourceMap,
       ...cssExtraOptions
     }
   };
@@ -62,7 +62,7 @@ function getStyleRule ({
     loader: 'postcss-loader',
     options: {
       ident: 'postcss',
-      sourceMap: hasMap,
+      sourceMap,
       plugins
     }
   };
@@ -73,24 +73,20 @@ function getStyleRule ({
   if (type === 'less') {
     loaders.push({
       loader: 'less-loader',
-      options: {
-        sourceMap: hasMap
-      }
+      options: { sourceMap }
     });
   }
   if (type === 'sass') {
     loaders.push({
       loader: 'sass-loader',
-      options: {
-        sourceMap: hasMap
-      }
+      options: { sourceMap }
     });
   }
   return loaders;
 }
 
-function getModulesPaths ({ cwd, CSSModules }) {
-  const paths = CSSModules === true ? ['./src'] : CSSModules;
+function getModulesPaths ({ cwd, cssModules }) {
+  const paths = cssModules === true ? ['./src'] : cssModules;
   if (paths && Array.isArray(paths) && paths.length > 0) {
     return paths.map(p => resolve(cwd, p));
   }
