@@ -68,13 +68,11 @@ a:any-link {
 
 /* font stuff */
 h2 {
-  -webkit-font-feature-settings: "c2sc";
-          font-feature-settings: "c2sc";
+  font-feature-settings: "c2sc";
   font-variant-caps: small-caps;
 }
 table {
-  -webkit-font-feature-settings: "lnum";
-          font-feature-settings: "lnum";
+  font-feature-settings: "lnum";
   font-variant-numeric: lining-nums;
 }
 
