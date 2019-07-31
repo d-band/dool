@@ -90,7 +90,7 @@ function getStyleRule ({
 }
 
 function getModulesPaths ({ cwd, CSSModules }) {
-  let paths = CSSModules === true ? ['./src'] : CSSModules;
+  const paths = CSSModules === true ? ['./src'] : CSSModules;
   if (paths && Array.isArray(paths) && paths.length > 0) {
     return paths.map(p => resolve(cwd, p));
   }

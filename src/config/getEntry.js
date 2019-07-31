@@ -27,8 +27,8 @@ export default ({
     })].forEach(file => {
       const RE = /\.(css|less|sass|scss)$/i;
       const base = filesBase || '.';
+      const ext = path.extname(file);
       let key = path.relative(base, file);
-      let ext = path.extname(file);
       if (RE.test(ext)) {
         key = key.replace(RE, '.css');
       } else {

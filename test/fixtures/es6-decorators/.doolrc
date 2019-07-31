@@ -1,0 +1,11 @@
+{
+  files: 'index.js',
+  babelProposals: {
+    'decorators': {
+      legacy: false,
+      decoratorsBeforeExport: false
+    },
+    'class-properties': { loose: false },
+    'private-methods': { loose: false }
+  }
+}

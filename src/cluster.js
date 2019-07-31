@@ -14,7 +14,7 @@ export default function run (options, callback) {
     maxConcurrentCallsPerWorker: maxCalls
   }, require.resolve('./runner'));
 
-  let outs = [];
+  const outs = [];
   for (let i = 0; i < entries.length; i++) {
     const opt = { options, entry: entries[i] };
     workers(opt, (err, output) => {

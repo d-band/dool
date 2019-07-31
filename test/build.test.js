@@ -136,6 +136,9 @@ describe('src/build', function () {
   it('should support es6', done => {
     testBuild({}, 'es6', done);
   });
+  it('should support es6 decorators', done => {
+    testBuild({}, 'es6-decorators', done);
+  });
   it('should support global', done => {
     testBuild({}, 'global', done);
   });
