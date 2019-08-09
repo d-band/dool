@@ -4,7 +4,7 @@ import WebpackDevServer from 'webpack-dev-server';
 import { getOptions } from './utils';
 import getConfig from './config';
 
-export default (args) => {
+export default (args, callback) => {
   args.mode = args.mode || 'development';
   const env = process.env.NODE_ENV || 'development';
   process.env.NODE_ENV = env;
@@ -45,7 +45,7 @@ export default (args) => {
     ...devServer,
     ...options.devServer
   });
-  server.listen(port, '0.0.0.0', function () {});
+  server.listen(port, '0.0.0.0', callback);
 
   const url = (https ? 'https://' : 'http://') + address() + ':' + port;
   console.log('Starting up dool server.');
