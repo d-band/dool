@@ -88,6 +88,7 @@ $ dool build -h
   babelEnvOptions: Object,
   postcssPlugins: Object | Array,
   autoprefixer: false | Object,
+  define: Object,
   externals: Object,
   extract: Boolean,
   cssModules: true | Array,
