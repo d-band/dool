@@ -78,3 +78,10 @@ export const log = {
     console.error(color.red(str));
   }
 };
+
+export function resolveDefine (obj) {
+  return Object.keys(obj).reduce((o, k) => ({
+    ...o,
+    [k]: JSON.stringify(obj[k])
+  }), {});
+}

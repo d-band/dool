@@ -4,3 +4,4 @@ if (process.env.NODE_ENV==='debug') {
 } else {
   alert('production mode');
 }
+console.log(VERSION);

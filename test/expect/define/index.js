@@ -98,6 +98,8 @@ if (true) {
   alert('debug mode');
 } else {}
 
+console.log("1.2.0");
+
 /***/ })
 
 /******/ });

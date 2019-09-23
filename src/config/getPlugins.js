@@ -2,16 +2,19 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import { CssEntryPlugin } from '../plugins';
+import { resolveDefine } from '../utils';
 
 export default ({
   hash,
+  define,
   extract,
   manifest
 }) => {
   const plugins = [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
+    new webpack.DefinePlugin(resolveDefine({
+      'process.env.NODE_ENV': process.env.NODE_ENV,
+      ...define
+    }))
   ];
   if (extract) {
     plugins.push(new CssEntryPlugin());
