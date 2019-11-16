@@ -54,7 +54,7 @@
     "webpack-dev-server": "^3.8.1",
     "webpack-manifest-plugin": "^2.0.4",
     "worker-farm": "^1.7.0",
-    "yargs": "^14.0.0"
+    "yargs": "^15.0.1"
   },
   "repository": {
     "type": "git",
