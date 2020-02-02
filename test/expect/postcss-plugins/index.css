@@ -37,6 +37,7 @@ h1,h2,h3,h4,h5,h6 {
 a {
   color: hwb(190, 35%, 20%);
   color: var(--highlightColor);
+  -webkit-transition: color 1s;
   transition: color 1s; /* autoprefixed ! */
 }
 a:hover {
