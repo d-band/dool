@@ -150,9 +150,7 @@ var Model = function Model() {
   _classCallCheck(this, Model);
 };
 
-var User =
-/*#__PURE__*/
-function (_Model) {
+var User = /*#__PURE__*/function (_Model) {
   _inherits(User, _Model);
 
   function User() {
@@ -189,9 +187,7 @@ function foo() {
 }
 
 function _foo() {
-  _foo = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
+  _foo = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
