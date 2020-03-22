@@ -1,4 +1,10 @@
+function isTestable(value) {
+   return function decorator(target) {
+      target.isTestable = value;
+   }
+}
 
+@isTestable(true)
 class Model {
   constructor() {}
 }

@@ -103,10 +103,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var HelloMessage = function HelloMessage(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello ", props.name);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello ", props.name);
 };
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HelloMessage, {
+Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HelloMessage, {
   name: "John"
 }), document.getElementById('root'));
 
