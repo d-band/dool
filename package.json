@@ -29,7 +29,7 @@
   "dependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.1",
+    "@babel/preset-react": "^7.9.4",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.1.0",
     "babel-preset-proposal": "^1.0.4",
