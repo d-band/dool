@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "4.3.6",
+  "version": "4.3.7",
   "description": "d-band tool & dev tool",
   "bin": {
     "dool": "bin/dool"
@@ -38,7 +38,7 @@
     "dool-init": "^2.0.5",
     "etpl-loader": "^1.0.1",
     "file-loader": "^6.0.0",
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^7.0.1",
     "glob": "^7.1.6",
     "ip": "^1.1.5",
     "is-plain-object": "^3.0.0",
@@ -76,7 +76,7 @@
   },
   "homepage": "https://github.com/d-band/dool#readme",
   "engines": {
-    "node": ">= 4"
+    "node": ">= 8"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
