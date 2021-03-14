@@ -50,7 +50,7 @@
     "postcss-loader": "^3.0.0",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
-    "webpack": "^4.43.0",
+    "webpack": "^5.0.0",
     "webpack-dev-server": "^3.10.3",
     "webpack-manifest-plugin": "^2.2.0",
     "worker-farm": "^1.7.0",
