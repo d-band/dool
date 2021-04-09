@@ -15,7 +15,7 @@ _  /_/ / / /_/ // /_/ /_  /
 
 [![NPM version](https://img.shields.io/npm/v/dool.svg)](https://www.npmjs.com/package/dool)
 [![NPM downloads](https://img.shields.io/npm/dm/dool.svg)](https://www.npmjs.com/package/dool)
-[![Build Status](https://travis-ci.org/d-band/dool.svg?branch=master)](https://travis-ci.org/d-band/dool)
+[![Build Status](https://travis-ci.com/d-band/dool.svg?branch=master)](https://travis-ci.com/d-band/dool)
 [![Coverage Status](https://coveralls.io/repos/github/d-band/dool/badge.svg?branch=master)](https://coveralls.io/github/d-band/dool?branch=master)
 [![Dependency Status](https://david-dm.org/d-band/dool.svg)](https://david-dm.org/d-band/dool)
 [![Greenkeeper badge](https://badges.greenkeeper.io/d-band/dool.svg)](https://greenkeeper.io/)
