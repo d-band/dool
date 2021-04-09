@@ -1,10 +1,14 @@
 import path from 'path';
 import { existsSync, readFileSync } from 'fs';
 import JSON5 from 'json5';
-import isPlainObject from 'is-plain-object';
-import * as color from './color';
+import { EntryObject } from 'webpack';
+import { isPlainObject } from 'is-plain-object';
+import * as colors from './colors';
+import { DoolConfig } from '../config/types';
 
-export function splitBy (obj, max) {
+export { colors };
+
+export function splitBy (obj: EntryObject, max: number): EntryObject[] {
   const arr = [];
   const keys = Object.keys(obj);
   const len = keys.length;
@@ -17,7 +21,10 @@ export function splitBy (obj, max) {
   return arr;
 }
 
-export function merge (oldObj, newObj) {
+export function merge (
+  oldObj: { [key: string]: any },
+  newObj: { [key: string]: any }
+): void {
   for (const key in newObj) {
     if (Array.isArray(newObj[key]) && Array.isArray(oldObj[key])) {
       oldObj[key] = oldObj[key].concat(newObj[key]);
@@ -28,7 +35,8 @@ export function merge (oldObj, newObj) {
     }
   }
 }
-function loadOptions (args, env) {
+function loadOptions (args: DoolConfig, env: string): DoolConfig {
+  args.cwd = args.cwd ?? process.cwd();
   const jsonFile = path.join(args.cwd, '.doolrc');
   const jsFile = path.join(args.cwd, '.doolrc.js');
   if (existsSync(jsonFile)) {
@@ -45,9 +53,10 @@ function loadOptions (args, env) {
     return { ...args };
   }
 }
-export function getOptions (args, env) {
+export function getOptions (args: DoolConfig, env: string): DoolConfig {
+  args.cwd = args.cwd ?? process.cwd();
   const options = loadOptions(args, env);
-  if (options.env) {
+  if (options.env != null) {
     if (options.env[env]) {
       merge(options, options.env[env]);
     }
@@ -69,19 +78,35 @@ export function getOptions (args, env) {
 }
 
 export const log = {
-  info (str) {
-    console.log(color.green('\nBuild completed  🎉\n'));
+  info (str = ''): void {
+    console.log(colors.green('\nBuild completed  🎉\n'));
     console.log(str);
   },
-  error (str) {
-    console.error(color.red('\nBuild failed  💥\n'));
-    console.error(color.red(str));
+  error (str = ''): void {
+    console.error(colors.red('\nBuild failed  💥\n'));
+    console.error(colors.red(str));
   }
 };
 
-export function resolveDefine (obj) {
+export function resolveDefine (obj: { [key: string]: any }): { [key: string]: string } {
   return Object.keys(obj).reduce((o, k) => ({
     ...o,
     [k]: JSON.stringify(obj[k])
   }), {});
+}
+
+export function getStatsOptions (verbose?: boolean): any {
+  return {
+    preset: verbose ? 'verbose' : 'minimal',
+    version: Boolean(verbose),
+    modules: Boolean(verbose),
+    colors: true,
+    builtAt: true,
+    groupAssetsByEmitStatus: false,
+    groupAssetsByInfo: false,
+    groupAssetsByPath: false,
+    groupAssetsByExtension: true,
+    groupAssetsByChunk: false,
+    assetsSpace: Infinity
+  };
 }

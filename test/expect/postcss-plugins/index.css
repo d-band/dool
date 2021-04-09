@@ -68,7 +68,7 @@ a:any-link {
 
 /* font stuff */
 h2 {
-  font-feature-settings: "c2sc";
+  font-feature-settings: "smcp";
   font-variant-caps: small-caps;
 }
 table {
@@ -78,12 +78,10 @@ table {
 
 /* filters */
 .blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  filter: blur(4px);
 }
 .sepia {
-  -webkit-filter: sepia(.8);
-          filter: sepia(.8);
+  filter: sepia(.8);
 }
 
 /* overflow-wrap fallback */

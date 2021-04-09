@@ -1,9 +1,11 @@
+import { DoolConfig } from './types';
+
 export default ({
   babelPlugins,
   babelProposals,
   babelEnvOptions
-}) => {
-  const plugins = babelPlugins || [];
+}: DoolConfig): any => {
+  const plugins = babelPlugins ?? [];
   return {
     babelrc: false,
     cacheDirectory: true,

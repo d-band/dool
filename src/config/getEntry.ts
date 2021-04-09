@@ -1,7 +1,9 @@
 import glob from 'glob';
 import path from 'path';
+import { EntryObject } from 'webpack';
+import { DoolConfig } from './types';
 
-function formatName (name) {
+function formatName (name: string): string {
   return name.charAt(0) === '.' ? name : `./${name}`;
 }
 
@@ -10,13 +12,14 @@ export default ({
   entry,
   files,
   filesBase
-}) => {
-  let newEntry = entry || {};
-
-  if (typeof newEntry === 'string' || Array.isArray(newEntry)) {
-    newEntry = { main: newEntry };
+}: DoolConfig): EntryObject => {
+  let newEntry: EntryObject;
+  if (typeof entry === 'string' || Array.isArray(entry)) {
+    newEntry = { main: entry };
+  } else {
+    newEntry = entry ?? {};
   }
-  let globFiles = files || [];
+  let globFiles = files ?? [];
   if (typeof globFiles === 'string') {
     globFiles = [globFiles];
   }
@@ -26,7 +29,7 @@ export default ({
       nodir: true
     })].forEach(file => {
       const RE = /\.(css|less|sass|scss)$/i;
-      const base = filesBase || '.';
+      const base = filesBase ?? '.';
       const ext = path.extname(file);
       let key = path.relative(base, file);
       if (RE.test(ext)) {

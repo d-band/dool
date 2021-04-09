@@ -1,0 +1,22 @@
+{
+  "include": ["src", "test"],
+  "compilerOptions": {
+    "outDir": "lib",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "alwaysStrict": true,
+    "removeComments": true,
+    "lib": ["es2017"],
+    "target": "es2017",
+    "module": "commonjs",
+    "sourceMap": false,
+    "declaration": true,
+    "declarationDir": "lib",
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}

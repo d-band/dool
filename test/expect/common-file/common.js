@@ -1,11 +1,10 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["common"],{
 
 /***/ "./util.js":
 /*!*****************!*\
   !*** ./util.js ***!
   \*****************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function() {
 
 console.log('util');
 

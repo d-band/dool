@@ -1,11 +1,21 @@
-parser: babel-eslint
-extends: standard
+extends: standard-with-typescript
+
+parserOptions:
+  project: ./tsconfig.json
 
 env:
   node: true
-  mocha: true
+  jest: true
 
 rules:
-  camelcase: 0
+  camelcase: off
   semi: [2, always]
   object-curly-spacing: [2, always]
+  '@typescript-eslint/semi': [2, always]
+  '@typescript-eslint/no-var-requires': off
+  '@typescript-eslint/strict-boolean-expressions': off
+  '@typescript-eslint/member-delimiter-style':
+    - 'error'
+    -
+      multiline: { delimiter: 'semi', requireLast: true }
+      singleline: { delimiter: 'semi', requireLast: false }

@@ -1,6 +1,8 @@
 import { resolve } from 'path';
+import { RuleSetRule, RuleSetUseItem } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import babelrc from './babelrc';
+import { DoolConfig } from './types';
 
 function getStyleRule ({
   mode,
@@ -9,7 +11,7 @@ function getStyleRule ({
   autoprefixer,
   cssSourceMap,
   postcssPlugins
-}, modules, type) {
+}: DoolConfig, modules: boolean, type: string): RuleSetUseItem[] {
   let sourceMap = mode === 'development';
   if (typeof cssSourceMap === 'boolean') {
     sourceMap = cssSourceMap;
@@ -19,11 +21,13 @@ function getStyleRule ({
   const fallback = extract ? MiniCssExtractPlugin.loader : 'style-loader';
 
   // config css-loader
-  const cssExtraOptions = modules ? {
-    modules: {
-      localIdentName: '[local]_[hash:base64:5]'
-    }
-  } : {};
+  const cssExtraOptions = modules
+    ? {
+        modules: {
+          localIdentName: '[local]_[hash:base64:5]'
+        }
+      }
+    : {};
   const css = {
     loader: 'css-loader',
     options: {
@@ -58,12 +62,15 @@ function getStyleRule ({
       });
     }
   }
+
   const postcss = {
     loader: 'postcss-loader',
     options: {
-      ident: 'postcss',
       sourceMap,
-      plugins
+      postcssOptions: {
+        config: false,
+        plugins
+      }
     }
   };
 
@@ -85,18 +92,17 @@ function getStyleRule ({
   return loaders;
 }
 
-function getModulesPaths ({ cwd, cssModules }) {
+function getModulesPaths ({ cwd, cssModules }: DoolConfig): undefined | string[] {
   const paths = cssModules === true ? ['./src'] : cssModules;
   if (paths && Array.isArray(paths) && paths.length > 0) {
-    return paths.map(p => resolve(cwd, p));
+    return paths.map(p => resolve(cwd ?? process.cwd(), p));
   }
   return undefined;
 }
 
-function getCSSRules (options) {
-  const rules = [];
+function getCSSRules (options: DoolConfig): RuleSetRule[] {
+  const rules: RuleSetRule[] = [];
   const modulesPaths = getModulesPaths(options);
-
   [{
     type: 'css',
     test: /\.css$/
@@ -117,7 +123,7 @@ function getCSSRules (options) {
         use: getStyleRule(options, false, v.type)
       }]
     });
-    if (modulesPaths) {
+    if (modulesPaths != null) {
       rules.push({
         test: v.test,
         include: modulesPaths,
@@ -129,7 +135,7 @@ function getCSSRules (options) {
   return rules;
 }
 
-export default (options) => {
+export default (options: DoolConfig): RuleSetRule[] => {
   const babel = {
     loader: 'babel-loader',
     options: babelrc(options)

@@ -17,6 +17,7 @@ const getOptions = isBuild => yargs => {
   yargs
     .usage(`Usage: dool ${isBuild ? 'build' : 'server'} [options]`)
     .option('compress', {
+      type: 'boolean',
       describe: 'Build with compress',
       default: isBuild ? true : false
     })
@@ -31,15 +32,18 @@ const getOptions = isBuild => yargs => {
   if (isBuild) {
     yargs
       .option('hash', {
+        type: 'boolean',
         describe: 'Build with hash and output map.json',
         default: false
       })
       .option('watch', {
         alias: 'w',
+        type: 'boolean',
         describe: 'Watch and rebuild',
         default: false
       })
       .option('cluster', {
+        type: 'boolean',
         describe: 'Run build with cluster',
         default: false
       })
@@ -56,6 +60,7 @@ const getOptions = isBuild => yargs => {
         default: 8000
       })
       .option('https', {
+        type: 'boolean',
         describe: 'Serve with HTTPS',
         default: false
       });
@@ -73,6 +78,7 @@ const getOptions = isBuild => yargs => {
       default: isBuild ? undefined : 'cheap-module-source-map'
     })
     .option('verbose', {
+      type: 'boolean',
       describe: 'Show more details',
       default: false
     });
@@ -83,15 +89,15 @@ const initCmd = argv => {
 };
 const buildCmd = argv => {
   argv.cwd = process.cwd();
-  require('../lib/build')(argv);
+  require('../lib/index').build(argv);
 };
 const cleanCmd = argv => {
   argv.cwd = process.cwd();
-  require('../lib/clean')(argv);
+  require('../lib/index').clean(argv);
 };
 const serverCmd = argv => {
   argv.cwd = process.cwd();
-  require('../lib/server')(argv);
+  require('../lib/index').server(argv);
 };
 require('yargs')
   .usage('Usage: dool <command> [options]')
