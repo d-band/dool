@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///./index.less"],"names":[],"mappings":"AAAA,OAAO,UAAU,cAAc,Y","file":"index.css","sourcesContent":[".hello{color:red}.hello .world{height:20px}"],"sourceRoot":""}
+{"version":3,"sources":["webpack:///./index.less"],"names":[],"mappings":"AAAA,OACE,SACF,CAFA,cAII,WACJ,C","file":"index.css","sourcesContent":[".hello {\n  color: red;\n\n  .world {\n    height: 20px;\n  }\n}"],"sourceRoot":""}

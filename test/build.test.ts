@@ -159,7 +159,7 @@ test('should support sourcemap', done => {
       map: file => file
     },
     compress: true,
-    cssSourceMap: false,
+    cssSourceMap: true,
     devtool: 'source-map'
   }, 'sourcemap', done);
 });
