@@ -25,7 +25,7 @@
     "babel-loader": "^8.1.0",
     "babel-preset-proposal": "^1.0.4",
     "css-loader": "^5.0.0",
-    "cssnano": "^4.1.10",
+    "cssnano": "^5.0.0",
     "dool-init": "^2.0.5",
     "etpl-loader": "^1.0.1",
     "file-loader": "^6.1.1",
