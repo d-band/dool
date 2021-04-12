@@ -140,6 +140,9 @@ test('should support global', done => {
 test('should support less', done => {
   testBuild({}, 'less', done);
 });
+test('should support scss', done => {
+  testBuild({}, 'scss', done);
+});
 test('should support load on demand', done => {
   testBuild({}, 'load-on-demand', done);
 });
