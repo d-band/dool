@@ -155,6 +155,13 @@ test('should support map hash', done => {
 test('should support compress default', done => {
   testBuild({}, 'compress', done);
 });
+test('should support no comments', done => {
+  testBuild({
+    compress: true,
+    mode: 'production',
+    comments: false
+  }, 'no-comments', done);
+});
 test('should support sourcemap', done => {
   testBuild({
     manifest: {

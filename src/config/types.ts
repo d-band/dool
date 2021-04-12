@@ -33,4 +33,5 @@ export interface DoolConfig {
   watch?: boolean;
   https?: boolean;
   port?: number;
+  comments?: 'some' | 'all' | boolean;
 }

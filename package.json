@@ -1,6 +1,6 @@
 {
   "name": "dool",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "d-band tool & dev tool",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -23,7 +23,7 @@
     "@babel/preset-react": "^7.13.13",
     "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
-    "babel-preset-proposal": "^1.1.0",
+    "babel-preset-proposal": "^1.1.2",
     "css-loader": "^5.0.0",
     "cssnano": "^5.0.0",
     "dool-init": "^2.0.5",

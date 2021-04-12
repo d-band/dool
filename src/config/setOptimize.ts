@@ -1,7 +1,7 @@
 import { Configuration } from 'webpack';
 import { DoolConfig } from './types';
 
-export default ({ commons, compress }: DoolConfig, config: Configuration): void => {
+export default ({ commons, compress, comments }: DoolConfig, config: Configuration): void => {
   config.optimization = {};
   if (commons) {
     if (commons === true) {
@@ -33,4 +33,15 @@ export default ({ commons, compress }: DoolConfig, config: Configuration): void 
   if (typeof compress === 'boolean') {
     config.optimization.minimize = compress;
   }
+  config.optimization.minimizer = [(compiler) => {
+    const TerserPlugin = require('terser-webpack-plugin');
+    const terser = new TerserPlugin({
+      extractComments: false,
+      terserOptions: {
+        format: { comments: comments ?? 'some' },
+        compress: { passes: 2 }
+      }
+    });
+    terser.apply(compiler);
+  }];
 };
