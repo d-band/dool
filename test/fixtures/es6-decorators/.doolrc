@@ -6,6 +6,7 @@
       decoratorsBeforeExport: false
     },
     'class-properties': { loose: false },
-    'private-methods': { loose: false }
+    'private-methods': { loose: false },
+    'private-property-in-object': { loose: false }
   }
 }
