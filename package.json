@@ -45,7 +45,7 @@
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.32.0",
-    "webpack-dev-server": "^3.11.0",
+    "webpack-dev-server": "^4.8.0",
     "webpack-manifest-plugin": "^3.1.1",
     "worker-farm": "^1.7.0",
     "yargs": "^16.1.0"
